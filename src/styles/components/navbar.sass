@@ -1,0 +1,84 @@
+@use '../mixins'
+
+.navbar 
+    display: flex
+    position: absolute
+    top: 0
+    justify-content: space-between
+    align-items: center
+    background-color: transparent
+    padding: 1rem 7vw
+    height: 100px
+    width: 100%
+    z-index: 10
+    
+    &-logo
+        display: flex
+        align-items: center
+        z-index: 4
+
+        h1
+            color: #fff
+            margin-left: .4rem
+            font-size: 1.4rem
+
+        img
+            width: 45px
+            transform: translate(0, 3%)   
+
+
+    &-container
+        transition: .4s
+        @media(max-width: 1020px)
+            display: none
+            position: absolute
+            background-color: #0b1424
+            left: 0
+            top: 100px
+            width: 100%
+            z-index: 1
+            transition: .4s
+            padding: 0 30px
+            
+        ul
+            display: flex
+            align-items: center
+            justify-content: center
+            @media(max-width: 1020px)
+                border-radius: 10px
+                align-items: flex-start
+                gap: 1.5rem 
+                padding: 2rem
+                width: 100%
+            @media (max-width: 630px)
+                flex-direction: column
+                padding: 2rem 1rem
+
+            li a 
+                color: white
+                margin-left: 2.5rem
+                text-transform: uppercase
+                transition: .4s
+                display: inline-block
+                @media (max-width: 630px)
+                    margin-left: 0
+                    
+            @media (hover: hover)
+                li a:hover 
+                    scale: 1.1
+    
+    i
+        color: white
+        font-size: 2.5rem
+        display: none
+        z-index: 4
+        cursor: pointer
+        @media(max-width: 1020px)
+            display: block
+        
+                    
+
+.active 
+    border-bottom: 1px solid #fff    
+                
+                
