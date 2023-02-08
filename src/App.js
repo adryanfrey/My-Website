@@ -2,7 +2,7 @@
 import './styles/main.sass'
 
 // react rout
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { HashRouter, Routes, Route } from 'react-router-dom';
 
 // pages
 import Home from './pages/Home';
@@ -13,12 +13,12 @@ import Navbar from './components/Navbar';
 function App() {
   return (
     <div>
-      <BrowserRouter>
+      <HashRouter>
       <Navbar />
         <Routes>
           <Route path='/' element={<Home />} />
         </Routes>
-      </BrowserRouter>
+      </HashRouter>
     </div>
   );
 }
