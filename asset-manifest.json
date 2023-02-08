@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/My-Website/static/css/main.c70ee166.css",
+    "main.js": "/My-Website/static/js/main.f244ed25.js",
+    "static/media/foto-site.png": "/My-Website/static/media/foto-site.c3a67b57270a21d8e9b5.png",
+    "static/media/AdryanFrey_CV.pdf": "/My-Website/static/media/AdryanFrey_CV.2fd3d93a3f3c9bb2a6e5.pdf",
+    "static/media/eccomerce.png": "/My-Website/static/media/eccomerce.2b87806131cd4fd78ab5.png",
+    "static/media/invoiceApp.png": "/My-Website/static/media/invoiceApp.c0453bc539ee87d8d068.png",
+    "static/media/cssLogo.png": "/My-Website/static/media/cssLogo.3b5efe41a51dc2aeadad.png",
+    "static/media/htmlLogo.png": "/My-Website/static/media/htmlLogo.45e48b83b85189f8b216.png",
+    "static/media/logo.png": "/My-Website/static/media/logo.54fcb4850e287f3b2db5.png",
+    "static/media/email.png": "/My-Website/static/media/email.0269106bc53a4bed45ef.png",
+    "static/media/reactLogo.png": "/My-Website/static/media/reactLogo.de3354c1d345a1aef682.png",
+    "static/media/js_logo.png": "/My-Website/static/media/js_logo.1306d05e5ee275c5880b.png",
+    "static/media/sassLogo.png": "/My-Website/static/media/sassLogo.d0f99d8df2e038cab3bb.png",
+    "index.html": "/My-Website/index.html",
+    "static/media/typescript.svg": "/My-Website/static/media/typescript.7c2e5f599fa6ccab4be8a590908ec5bb.svg",
+    "main.c70ee166.css.map": "/My-Website/static/css/main.c70ee166.css.map",
+    "main.f244ed25.js.map": "/My-Website/static/js/main.f244ed25.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.c70ee166.css",
+    "static/js/main.f244ed25.js"
+  ]
+}
