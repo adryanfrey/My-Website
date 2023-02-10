@@ -33,16 +33,66 @@ const Home = () => {
 
   // animations animation
   useEffect(() => {
+    const checkWindowSizeSkill = () => {
+      if (windowSize > 820) {
+        return 300
+      } else if(windowSize < 500) {
+        return 400
+      } else {
+        return 630
+      }
+    }
 
     // skills animation
     gsap.to('.skill-container', {
       opacity: 1, duration: 1, x: 0, ease: "back.out(4)", stagger: 0.2, scrollTrigger: {
         trigger: '.section1-container-skills',
-        start: 300
+        start: checkWindowSizeSkill(),
+      }
+    })
+    
+    // projects animation
+    gsap.to('.project1', {
+      opacity: 1, duration: 2, y: 0, ease: "power2.out", scrollTrigger: {
+        trigger: '.project1',
+        start: 'top 80%',
       }
     })
 
+    gsap.to('.project2', {
+      opacity: 1, duration: 2, y: 0, ease: "power2.out", scrollTrigger: {
+        trigger: '.project2',
+        start: 'top 80%',
+      }
+    })
+
+    gsap.to('.project3', {
+      opacity: 1, duration: 2, y: 0, ease: "power2.out", scrollTrigger: {
+        trigger: '.project3',
+        start: 'top 80%',
+      }
+    })
+
+    gsap.to('.project4', {
+      opacity: 1, duration: 2, y: 0, ease: "power2.out", scrollTrigger: {
+        trigger: '.project4',
+        start: 'top 80%',
+      }
+    })
+
+    // contact animation
+    gsap.to('.email-container', {
+      opacity: 1, duration: 1, x: 0, ease: "back.out(1.4)", scrollTrigger: {
+        trigger: '.contact-container',
+        start: 'top 60%',
+        markers: true
+      }
+    })
+    
+
   }, [])
+
+  // contact animation
 
   // to top button animation
   window.addEventListener('scroll', () => {
@@ -188,7 +238,7 @@ const Home = () => {
       <section id='section2' className='section2'>
         <div className='projects-container'>
           <h2>Portfolio</h2>
-          <div className='project'>
+          <div className='project project1'>
             <img src={ecommerce} alt="Project photo" />
             <h2>Eccomerce Website</h2>
             <p>Full Responsive and Functional Eccomerce Website. JavaScript, React, Sass.</p>
@@ -198,7 +248,7 @@ const Home = () => {
             </div>
           </div>
 
-          <div className='project'>
+          <div className='project project2'>
             <img src={invoiceApp} alt="Project photo" />
             <h2>Invoice App</h2>
             <p>FullStack Invoice App with Login and Register features for tracking and managing invoices easily. JavaScript, React, Sass, Firebase.</p>
@@ -208,12 +258,12 @@ const Home = () => {
             </div>
           </div>
 
-          <div className='project'>
+          <div className='project project3'>
             <img src="" alt="" />
             <h2>Coming soon...</h2>
           </div>
 
-          <div className='project'>
+          <div className='project project4'>
             <img src="" alt="" />
             <h2>Coming soon...</h2>
           </div>
