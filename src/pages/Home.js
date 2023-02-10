@@ -1,5 +1,6 @@
 // sass
 import '../styles/pages/home.sass'
+import '../styles/pages/navbar.sass'
 
 // assets
 import adryan from '../assets/foto-site.png'
@@ -11,6 +12,7 @@ import CssLogo from '../assets/cssLogo.png'
 import SassLogo from '../assets/sassLogo.png'
 import ecommerce from '../assets/eccomerce.png'
 import invoiceApp from '../assets/invoiceApp.png'
+import logo from '../assets/logo.png'
 
 import cv from '../assets/AdryanFrey_CV.pdf'
 
@@ -24,6 +26,10 @@ import emailjs from 'emailjs-com'
 
 const Home = () => {
   gsap.registerPlugin(ScrollTrigger)
+
+  // states
+  const [displayNavbar, setDisplayNavbar] = useState(false)
+  const [windowSize, setWindowSize] = useState(window.innerWidth)
 
   // animations animation
   useEffect(() => {
@@ -55,16 +61,73 @@ const Home = () => {
 
     emailjs.sendForm('service_yynju27', 'template_hlzd56y', e.target, 'EFiuWxNTSflYwcYLU')
       .then((result) => {
-          console.log(result.text);
+        console.log(result.text);
       }, (error) => {
-          console.log(error.text);
+        console.log(error.text);
       });
 
     e.target.reset()
   }
 
+  // navbar js
+  useEffect(() => {
+    const navbarContainer = document.querySelector('.navbar-container')
+
+    if (displayNavbar) {
+      navbarContainer.style.display = 'block'
+    } else {
+      navbarContainer.style.display = 'none'
+    }
+
+  }, [displayNavbar])
+
+  const handleClick = () => {
+    if (displayNavbar) {
+      setDisplayNavbar(false)
+    } else {
+      setDisplayNavbar(true)
+    }
+  }
+
+  function MyComponent() {
+    useEffect(() => {
+      function handleResize() {
+        setWindowSize(window.innerWidth)
+      }
+      window.addEventListener('resize', handleResize)
+
+      if (windowSize < 1020) {
+        const navbarContainer = document.querySelector('.navbar-container')
+        navbarContainer.style.display = 'none'
+      } else {
+        const navbarContainer = document.querySelector('.navbar-container')
+        navbarContainer.style.display = 'block'
+      }
+
+      return _ => window.removeEventListener('resize', handleResize)
+    }, [windowSize])
+  }
+  MyComponent()
+
   return (
     <div className='home'>
+      <header className='navbar'>
+        <div className="navbar-logo">
+          <a href='#'><img src={logo} alt="Logo" /></a>
+          <a href='#'><h1>Adryan Frey</h1></a>
+        </div>
+
+        <nav className='navbar-container'>
+          <ul>
+            <li><a href='#'>Home</a></li>
+            <li><a href='#section1'>Skills</a></li>
+            <li><a href='#section2'>Portfolio</a></li>
+            <li><a href='#section3'>Contact</a></li>
+          </ul>
+        </nav>
+        <i onClick={handleClick} id='mobile-bar' className="fa-solid fa-bars"></i>
+      </header>
+
       <main className='main'>
         <div className='main-container'>
           <div className='main-container-text'>
@@ -170,15 +233,15 @@ const Home = () => {
               <h2>Send me a message!</h2>
               <label>
                 Name:
-                <input name='name' type="text" placeholder='Your Name' required/>
+                <input name='name' type="text" placeholder='Your Name' required />
               </label>
               <label>
                 Email:
-                <input name='email' type="email" placeholder='Your Email' required/>
+                <input name='email' type="email" placeholder='Your Email' required />
               </label>
               <label>
                 Message:
-                <textarea name='message' placeholder='Message' required/>
+                <textarea name='message' placeholder='Message' required />
               </label>
               <button type='submit'>Send</button>
             </form>
