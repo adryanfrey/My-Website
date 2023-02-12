@@ -1,10 +1,11 @@
 {
   "files": {
     "main.css": "/My-Website/static/css/main.a16bb508.css",
-    "main.js": "/My-Website/static/js/main.f331b823.js",
+    "main.js": "/My-Website/static/js/main.2cbc70c9.js",
     "static/media/foto-site.png": "/My-Website/static/media/foto-site.c3a67b57270a21d8e9b5.png",
     "static/media/AdryanFrey_CV.pdf": "/My-Website/static/media/AdryanFrey_CV.2fd3d93a3f3c9bb2a6e5.pdf",
     "static/media/eccomerce.png": "/My-Website/static/media/eccomerce.2b87806131cd4fd78ab5.png",
+    "static/media/appleClone.png": "/My-Website/static/media/appleClone.fd6b24ac0e930465e11b.png",
     "static/media/invoiceApp.png": "/My-Website/static/media/invoiceApp.c0453bc539ee87d8d068.png",
     "static/media/cssLogo.png": "/My-Website/static/media/cssLogo.3b5efe41a51dc2aeadad.png",
     "static/media/htmlLogo.png": "/My-Website/static/media/htmlLogo.45e48b83b85189f8b216.png",
@@ -16,10 +17,10 @@
     "index.html": "/My-Website/index.html",
     "static/media/typescript.svg": "/My-Website/static/media/typescript.7c2e5f599fa6ccab4be8a590908ec5bb.svg",
     "main.a16bb508.css.map": "/My-Website/static/css/main.a16bb508.css.map",
-    "main.f331b823.js.map": "/My-Website/static/js/main.f331b823.js.map"
+    "main.2cbc70c9.js.map": "/My-Website/static/js/main.2cbc70c9.js.map"
   },
   "entrypoints": [
     "static/css/main.a16bb508.css",
-    "static/js/main.f331b823.js"
+    "static/js/main.2cbc70c9.js"
   ]
 }
