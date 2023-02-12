@@ -13,6 +13,7 @@ import SassLogo from '../assets/sassLogo.png'
 import ecommerce from '../assets/eccomerce.png'
 import invoiceApp from '../assets/invoiceApp.png'
 import logo from '../assets/logo.png'
+import appleClone from '../assets/appleClone.png'
 
 import cv from '../assets/AdryanFrey_CV.pdf'
 
@@ -85,7 +86,6 @@ const Home = () => {
       opacity: 1, duration: 1, x: 0, ease: "back.out(1.4)", scrollTrigger: {
         trigger: '.contact-container',
         start: 'top 60%',
-        markers: true
       }
     })
     
@@ -185,6 +185,11 @@ const Home = () => {
             <h1>Frontend Developer </h1>
             <p>Aspiring software engineer, seeking to apply competent developement skills with focus on collaboration, communication, and passion.</p>
             <a href={cv} download='AdryanFrey_CV.pdf'>Download CV </a>
+            <div className='social-media-container'>
+              <a href="http://www.linkedin.com/in/adryan-frey"><i className="fa-brands fa-linkedin"></i></a>
+              <a href="https://github.com/adryanfrey"><i className="fa-brands fa-github"></i></a>
+              <a href="https://www.instagram.com/adryanfrey"><i className="fa-brands fa-instagram"></i></a>
+            </div>
           </div>
           <div className='main-container-img'>
             <img src={adryan} alt="Adryan Frey foto" />
@@ -259,8 +264,13 @@ const Home = () => {
           </div>
 
           <div className='project project3'>
-            <img src="" alt="" />
-            <h2>Coming soon...</h2>
+            <img src={appleClone} alt="" />
+            <h2>Apple Website Clone</h2>
+            <p>Apple website landing page fully animated. JavaScript, Html, Css</p>
+            <div className='btn-container'>
+              <a href='https://adryanfrey.github.io/Iphone-Website-Clone/' className='siteBtn'>Visit WebSite</a>
+              <a href='https://github.com/adryanfrey/Iphone-Website-Clone' className='gitBtn'>Check on GitHub</a>
+            </div>
           </div>
 
           <div className='project project4'>

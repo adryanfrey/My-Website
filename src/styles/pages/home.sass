@@ -70,9 +70,24 @@
                 position: relative
                 border: none
                 z-index: 4
-
-                &:hover
+            @media (hover:hover)
+                a:hover
                     transform: scale(1.1)
+
+            .social-media-container
+                margin-top: 2rem
+                a
+                    color: #fff
+                    background: none
+                    font-size: 2.3rem
+                    margin-right: .5rem
+                    i
+                        transition: .4s
+                    
+                @media (hover:hover)
+                    i:hover
+                        transform: scale(1.1)
+            
 
         &-img
             width: 40%
