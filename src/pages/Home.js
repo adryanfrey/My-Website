@@ -37,7 +37,7 @@ const Home = () => {
     const checkWindowSizeSkill = () => {
       if (windowSize > 820) {
         return 300
-      } else if(windowSize < 500) {
+      } else if (windowSize < 500) {
         return 400
       } else {
         return 630
@@ -51,7 +51,7 @@ const Home = () => {
         start: checkWindowSizeSkill(),
       }
     })
-    
+
     // projects animation
     gsap.to('.project1', {
       opacity: 1, duration: 2, y: 0, ease: "power2.out", scrollTrigger: {
@@ -88,7 +88,7 @@ const Home = () => {
         start: 'top 60%',
       }
     })
-    
+
 
   }, [])
 
@@ -121,12 +121,16 @@ const Home = () => {
 
   // navbar js
   useEffect(() => {
-    const navbarContainer = document.querySelector('.navbar-container')
+    const navbarContainer = document.querySelector('.nav-mobile')
+    console.log(navbarContainer)
 
     if (displayNavbar) {
-      navbarContainer.style.display = 'block'
+      console.log('po')
+      navbarContainer.style.paddingTop = '100px'
+      navbarContainer.style.opacity = '1'
     } else {
-      navbarContainer.style.display = 'none'
+      navbarContainer.style.opacity = '0'
+      navbarContainer.style.paddingTop = '0px'
     }
 
   }, [displayNavbar])
@@ -177,6 +181,14 @@ const Home = () => {
         </nav>
         <i onClick={handleClick} id='mobile-bar' className="fa-solid fa-bars"></i>
       </header>
+      <div className='nav-mobile'>
+        <ul>
+          <li><a href='#'>Home</a></li>
+          <li><a href='#section1'>Skills</a></li>
+          <li><a href='#section2'>Portfolio</a></li>
+          <li><a href='#section3'>Contact</a></li>
+        </ul>
+      </div>
 
       <main className='main'>
         <div className='main-container'>

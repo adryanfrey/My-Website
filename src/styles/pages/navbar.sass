@@ -11,7 +11,9 @@
     height: 100px
     width: 100%
     z-index: 10
-    
+    @media(max-width: 1020px)
+        background-color: #0b1424
+        
     &-logo
         display: flex
         align-items: center
@@ -31,28 +33,11 @@
         transition: .4s
         @media(max-width: 1020px)
             display: none
-            position: absolute
-            background-color: #0b1424
-            left: 0
-            top: 100px
-            width: 100%
-            z-index: 1
-            transition: .4s
-            padding: 0 30px
             
         ul
             display: flex
             align-items: center
             justify-content: center
-            @media(max-width: 1020px)
-                border-radius: 10px
-                align-items: flex-start
-                gap: 1.5rem 
-                padding: 2rem
-                width: 100%
-            @media (max-width: 630px)
-                flex-direction: column
-                padding: 2rem 1rem
 
             li a 
                 color: white
@@ -60,9 +45,7 @@
                 text-transform: uppercase
                 transition: .4s
                 display: inline-block
-                @media (max-width: 630px)
-                    margin-left: 0
-                    
+    
             @media (hover: hover)
                 li a:hover 
                     scale: 1.1
@@ -73,10 +56,32 @@
         display: none
         z-index: 4
         cursor: pointer
+        transition: .2s
         @media(max-width: 1020px)
             display: block
+            &:active
+                transform: scale(0.8)
+            
+
+.nav-mobile
+    display: none
+    @media(max-width: 1020px)
+        display: flex
+        background-color: #0b1424
+        justify-content: center
+        transition: .4s
+        opacity: 0
+        z-index: 1
         
-                    
+        ul
+            display: flex
+            gap: 2rem
+            background-color: #0b1424
+            
+            a
+                color: #fff
+                font-size: 1.3rem
+                text-transform: uppercase                
 
 .active 
     border-bottom: 1px solid #fff    
