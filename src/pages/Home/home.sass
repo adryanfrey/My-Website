@@ -1,15 +1,16 @@
-@use '../mixins'
 
 .main .letter, .main .letter2, .main .letter3
     display: inline-block
 
 .main
-    background: #0b1424
     display: flex
     justify-content: center
     height: 100vh
     position: relative
     overflow: hidden
+    transform-style: preserve-3d
+    border: 1px solid re
+
     @media (max-width: 1020px)
         height: 100%
 
@@ -18,6 +19,7 @@
         display: flex
         align-items: center
         justify-content: space-between
+        transform: scale(4)
         @media (max-width: 1020px)
             flex-direction: column
             padding-top: 150px
@@ -33,20 +35,29 @@
                 width: 100%
                 align-items: center
 
-            .gradient
+            .title
+                position: relative
+                font-size: 4rem
                 background-image: linear-gradient(90deg, #a0e3ec, #25a9d7)
                 background-clip: text
                 -webkit-text-fill-color: transparent
+                @media (max-width: 695px)
+                    line-height: 45px
+                    font-size: 2.5rem
 
             h1
-                color: #fff
-                width: 115%
                 font-size: 4rem
+                position: relative
+                color: #fff
+
                 @media (max-width: 1400px)
                     font-size: 3rem
                 @media (max-width: 1020px)
                     width: 100%
                     text-align: center
+                @media (max-width: 695px)
+                    line-height: 45px
+                    font-size: 2.5rem
 
             p
                 color: #fff
@@ -55,14 +66,14 @@
                 @media (max-width: 1020px)
                     text-align: center
 
-            a
+            .cv
                 margin-top: 2rem
                 width: 250px
                 height: 50px
                 text-align: center
                 line-height: 50px
                 border-radius: 50px
-                background-image: linear-gradient(90deg, #a0e3ec, #25a9d7)
+                background-image: linear-gradient(90deg, #25a9d7, #a0e3ec)
                 color: #fff
                 font-weight: bold
                 cursor: pointer
@@ -70,6 +81,12 @@
                 position: relative
                 border: none
                 z-index: 4
+                overflow: hidden
+
+                &:hover
+                    box-shadow: 0px 0px 20px 5px #25a9d7
+                    background-image: linear-gradient(90deg, #5cbbd5, #ade7ef)
+
             @media (hover:hover)
                 a:hover
                     transform: scale(1.1)
@@ -80,14 +97,18 @@
                     color: #fff
                     background: none
                     font-size: 2.3rem
-                    margin-right: .5rem
+                    margin-right: .7rem
+
                     i
                         transition: .4s
-                    
+                        overflow: hidden
+
+                    &:hover
+                        filter: drop-shadow(0px 0px 10px#fff)
+
                 @media (hover:hover)
                     i:hover
                         transform: scale(1.1)
-            
 
         &-img
             width: 40%
@@ -104,33 +125,13 @@
             img
                 width: 100%
                 opacity: 1
+                transition: .4s
                 filter: drop-shadow(-2px 15px 10px #25a9d7)
 
-    .circle
-        border: 2px solid #25a9d7
-        position: absolute
-        width: 200%
-        height: 400%
-        border-radius: 100%
-        top: -20%
-        left: -98%
-        z-index: 3
-        @media (max-width: 1020px)
-            display: none
-
-
-    .circle2
-        border: 2px solid #25a9d7
-        position: absolute
-        width: 190%
-        height: 380%
-        border-radius: 100%
-        top: -11%
-        left: -97%
-        z-index: 3
-        @media (max-width: 1020px)
-            display: none
-
+            @media (hover: hover)
+                img:hover
+                    filter: drop-shadow(-2px 15px 10px #fff)
+                    transform: scale(1.05)
 .section1
     background: #fff
     height: 100%
@@ -139,7 +140,6 @@
     align-items: center
     position: relative
     padding: 3rem 0
-
 
     #section1
         position: absolute
@@ -161,43 +161,75 @@
             font-size: 2rem
             margin-bottom: 2rem
             color: #25a9d7
+            font-family: 'Open Sans', sans-serif
             @media (max-width: 1020px)
                 margin-bottom: .5rem
+            @media (max-width: 650px)
+                font-size: 1.5rem
+                margin-bottom: 0
             h1
                 font-family: 'Open Sans', sans-serif
-            
+
 
         &-skills
             display: flex
             flex-wrap: wrap
             justify-content: space-between
+            color: #fff
 
             .skill-container
                 width: 30%
+                overflow: hidden
                 box-shadow: 0 6px 20px 0 #25a9d7
                 display: flex
                 align-items: center
                 border-radius: 10px
                 margin-bottom: 53px
                 opacity: 0
+                color: #0b1424
+                transition: color .4s
+                position: relative
                 transform: translate(-30%)
                 @media (max-width: 1020px)
                     width: 47%
                 @media (max-width: 650px)
                     width: 100%
+                    margin-bottom: 20px
 
-                img
-                    width: 25%
+                div
+                    min-width: 110px
+                    height: 110px
                     border-radius: 10px 0 0 10px
+                    display: flex
+                    justify-content: center
+                    align-items: center
+                    word-wrap: break-word
+                    z-index: 2
+                    @media (max-width: 650px)
+                        height: 60px
+                        min-width: 60px
+                    
+
+                    img
+                        width: 100%
+                        border-radius: 10px 0 0 10px
+                        height: 100%
+
+                    .smallLogo
+                        height: 80%
+                        width: 80%
 
                 h3
-                    font-size: 1.7rem
+                    font-size: 1.5rem
                     margin: 0 auto
-                    color: #0b1424
+                    color: inherit
+                    padding: 0 1rem
+                    z-index: 2
+                    @media (max-width: 650px)
+                        font-size: 1.3rem
 
 .section2
     height: 100%
-    background-color: #0b1424
 
     .projects-container
         width: 80%
@@ -214,86 +246,106 @@
             font-size: 3rem
             margin-bottom: 3rem
 
+        .project1
+            background: url('../../assets/eccomerce.png') no-repeat
+
+        .project2
+            background: url('../../assets/invoiceApp.png') no-repeat
+
+        .project3
+            background: url('../../assets/appleClone.png') no-repeat
+
+        .project4
+            background: url('../../assets/pizzeriaPro.png') no-repeat
+
+
         .project
             width: 48%
             border: 1px solid #25a9d7
-            border-radius: 12px
             margin-bottom: 3.5vw
+            position: relative
             display: flex
             flex-direction: column
-            padding: 2.5rem
-            transform: translate(0, 20%) 
+            justify-content: center
+            padding: 3rem
+            height: 300px
+            transform: translate(0, 20%)
             opacity: 0
-            @media (max-width: 950px)
+            cursor: pointer
+            background-size: cover
+            background-position: center top
+            @media (max-width: 1230px)
                 width: 100%
+                height: 400px
+            @media(max-width: 950px)
+                height: auto
 
-            img
+
+            .filter
+                position: absolute
                 width: 100%
-                border-radius: 12px
+                height: 100%
+                top: 0
+                left: 0
+                background-color: rgba(0, 0, 0, 0.6)
 
             h2
                 font-size: 2rem
-                margin: 1rem 0
+                margin: .5rem 0
+                z-index: 3
 
             p
-                color: rgba(255, 255,255 , 0.8)
-                height: 80px
+                color: #fff
+                z-index: 3
+                text-shadow: 2px 2px 5px #000
                 @media (max-width: 600px)
                     margin-bottom: 1rem
-                @media (max-width: 455px)
-                    margin-bottom: 3.5rem
 
-            .btn-container
+            button
+                background: #fff
+                border: none
                 display: flex
-                justify-content: space-between
-                flex-wrap: wrap
+                width: 160px
+                align-items: center
+                justify-content: center
+                height: 40px
+                margin-top: 1rem
+                text-transform: uppercase
+                cursor: pointer
+                transform: skew(-21deg)
+                z-index: 11
 
-                .siteBtn
-                    height: 50px
-                    width: 48%
-                    border-radius: 50px
-                    border: none
-                    background-image: linear-gradient(90deg, #a0e3ec, #25a9d7)
+                span
+                    display: inline-block
+                    transform: skew(21deg)
+                    margin-right: .4rem
+
+                .button-icon
+                    transform: skew(21deg)
+
+                &::before
+                    content: ''
+                    position: absolute
+                    top: 0
+                    bottom: 0
+                    right: 100%
+                    left: 0
+                    background: #25a9d7
+                    opacity: 0
+                    z-index: -1
+                    transition: all 0.5s
+
+                &:hover
                     color: #fff
-                    cursor: pointer
-                    text-align: center
-                    line-height: 50px
-                    font-weight: bold
-                    transition: .4s
-                    @media (max-width: 1150px)
-                        width: 100%
-                        margin-bottom: 1rem
-                        margin-top: 1rem
-                    @media (max-width: 950px)
-                        margin-top: 0
-                @media (hover: hover)
-                    .siteBtn:hover
-                        transform: scale(1.1)
-                    
 
-                .gitBtn
-                    height: 50px
-                    width: 48%
-                    border-radius: 50px
-                    border: 1px solid #fff
-                    background-color: transparent
-                    color: #fff
-                    transition: .4s
-                    cursor: pointer
-                    text-align: center
-                    line-height: 47px
-                    font-weight: bold
-                    @media (max-width: 1150px)
-                        width: 100%
-                @media (hover: hover)
-                    .gitBtn:hover
-                        transform: scale(1.1)
-                        background-color: #fff
-                        color: #000
-                    
-
+                &:hover::before
+                    left: 0
+                    right: 0
+                    opacity: 1
+          
 .section3
     background: #fff
+    border: 1px solid #fff
 
     .contact-container
         display: flex
@@ -301,9 +353,8 @@
         flex-direction: column
         width: 80%
         margin: 0 auto
-        margin-bottom: 3rem 
-        border-radius: 12px 
-        
+        margin-bottom: 3rem
+        border-radius: 12px
 
         h2
             color: #25a9d7
@@ -315,7 +366,7 @@
         .email-container
             width: 100%
             display: flex
-            transform: translate(-120%)
+            transform: translate(0, 20%)
             opacity: 0
             @media (max-width: 1125px)
                 flex-direction: column
@@ -339,7 +390,7 @@
 
                 i
                     margin-right: 1rem
-                
+
                 h3
                     background-color: #fff
                     width: 100%
@@ -348,7 +399,7 @@
                         font-size: 1rem
                     @media (max-width: 410px)
                         font-size: .9rem
-                
+
                 .h3-top
                     border-radius: 12px 12px 0 0
                 .h3-bot
@@ -365,9 +416,9 @@
                 @media (max-width: 1125px)
                     width: 100%
                     order: 1
-                    border-radius: 12px 12px 0 0 
+                    border-radius: 12px 12px 0 0
                 @media (max-width: 680px)
-                    padding: 1.7rem 
+                    padding: 1.7rem
 
                 h2
                     width: 100%
@@ -399,7 +450,7 @@
 
                 button
                     height: 50px
-                    border-radius: 50px
+                    border-radius: 12px
                     background-image: linear-gradient(90deg, #a0e3ec, #25a9d7)
                     color: #fff
                     font-weight: bold
@@ -407,11 +458,11 @@
                     transition: .4s
                     position: relative
                     border: none
-                    margin-top: 2rem 
+                    margin-top: 2rem
                     margin-bottom: 1rem
                 @media (hover: hover)
                     button:hover
-                        transform: scale(0.9)
+                        box-shadow: 0px 0px 20px 5px #25a9d7
 
 .to-top
     position: fixed
@@ -422,15 +473,14 @@
     border: none
     border-radius: 50%
     cursor: pointer
-    transition: 2
+    transition: .4s 
     display: none
+
+    &:hover
+        transform: scale(1.2)
 
     a
         display: flex
         height: 100%
         justify-content: center
         align-items: center
-
-        i
-            font-size: 2rem
-            color: #25a9d7
