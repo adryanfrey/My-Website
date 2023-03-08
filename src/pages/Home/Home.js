@@ -31,6 +31,7 @@ import { IoMdRocket } from 'react-icons/io'
 // components
 import Footer from '../../components/Footer/Footer'
 import Loading from '../../components/Loading/Loading'
+import Contact from '../../components/Contact/Contact'
 
 const Home = () => {
   gsap.registerPlugin(ScrollTrigger)
@@ -95,8 +96,15 @@ const Home = () => {
     })
 
     // contact animation
-    gsap.to('.email-container', {
-      opacity: 1, duration: 1.5, y: 0, ease: "power2.out", scrollTrigger: {
+    gsap.to('.img-bg', {
+      opacity: 1, duration: 1, x: 0, ease: "power2.out", scrollTrigger: {
+        trigger: '.contact-container',
+        start: 'top 50%',
+      }
+    })
+
+    gsap.to('.formMessage', {
+      opacity: 1, duration: 1, x: 0, ease: "power2.out", scrollTrigger: {
         trigger: '.contact-container',
         start: 'top 50%',
       }
@@ -118,21 +126,6 @@ const Home = () => {
       toTop.style.display = 'none'
     }
   })
-
-
-  // handle message
-  const handleSubmit = (e) => {
-    e.preventDefault()
-
-    emailjs.sendForm('service_yynju27', 'template_hlzd56y', e.target, 'EFiuWxNTSflYwcYLU')
-      .then((result) => {
-        console.log(result.text);
-      }, (error) => {
-        console.log(error.text);
-      });
-
-    e.target.reset()
-  }
 
   // loader
   if (loading) {
@@ -167,16 +160,13 @@ const Home = () => {
     }
   }
 
-  const handleOpenNavbar = (scroll = undefined) => {
+  const handleOpenNavbar = () => {
     const navbar = document.querySelector('.nav-mobile')
     const home = document.querySelector('.home')
 
     navbar.style.transform = 'translate(0,0)'
     home.style.height = '100vh' 
     home.style.overflow = 'hidden'
-
-  
-
    
   }
 
@@ -359,31 +349,7 @@ const Home = () => {
       </section>
 
       <section id='section3' className='section3'>
-        <div className='contact-container'>
-          <h2>Contact</h2>
-          <div className='email-container'>
-            <div className='img-bg'>
-              <h3 className='h3-top'><i className="fa-solid fa-phone"></i> +31 6 29800492</h3>
-              <h3 className='h3-bot'><i className="fa-solid fa-envelope"></i>adryanfrey886@gmail.com</h3>
-            </div>
-            <form onSubmit={(e) => handleSubmit(e)}>
-              <h2>Send me a message!</h2>
-              <label>
-                Name:
-                <input name='name' type="text" placeholder='Your Name' required />
-              </label>
-              <label>
-                Email:
-                <input name='email' type="email" placeholder='Your Email' required />
-              </label>
-              <label>
-                Message:
-                <textarea name='message' placeholder='Message' required />
-              </label>
-              <button type='submit'>Send</button>
-            </form>
-          </div>
-        </div>
+        <Contact />
       </section>
 
       <button className='to-top'>

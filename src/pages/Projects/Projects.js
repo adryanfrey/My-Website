@@ -52,6 +52,8 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
 // components
 import Loading from '../../components/Loading/Loading'
+import AllProjects from '../../components/AllProjects/AllProjects'
+import Contact from '../../components/Contact/Contact'
 
 export default function Projects() {
     gsap.registerPlugin(ScrollTrigger)
@@ -59,12 +61,14 @@ export default function Projects() {
     const { id } = useParams()
     const navigate = useNavigate('')
     const [loading, setLoading] = useState(true)
+    const [projectsVisible, setProjectsVisible] = useState(false)
+    const [contactVisible, setContactVisible] = useState(false)
 
     // animations
     useEffect(() => {
 
         // first load animation
-        gsap.to('.container', { scale: 1, duration: 1, ease: 'back.out(1)' })
+        gsap.to('.container', { scale: 1, duration: 1.3, ease: 'back.out(1)' })
 
         // scroll animation
         gsap.to('.projectIntroduction', {
@@ -88,10 +92,10 @@ export default function Projects() {
             }
         })
 
-        gsap.to('.features', {
+        gsap.to('.projectFeatures', {
             opacity: 1, duration: 2, y: 0, ease: "power2.out", scrollTrigger: {
-                trigger: '.features',
-                start: 'top 30%',
+                trigger: '.projectFeatures',
+                start: 'top 80%',
             }
         })
 
@@ -102,7 +106,7 @@ export default function Projects() {
             }
         })
 
-    }, [loading])
+    }, [loading, projectsVisible, contactVisible])
 
     // imgs
     const audiophileImgs = [audiophile1, audiophile2, audiophile3, audiophile4, audiophile5]
@@ -122,7 +126,7 @@ export default function Projects() {
             imgs: audiophileImgs,
             mobile: false,
             gitHubRepo: 'https://github.com/adryanfrey/Audiophile-E-commerce',
-            siteLink: 'https://adryanfrey.github.io/Audiophile-E-commerce/' 
+            siteLink: 'https://adryanfrey.github.io/Audiophile-E-commerce/'
         },
         {
             title: 'Invoice app',
@@ -134,7 +138,7 @@ export default function Projects() {
             imgs: invoiceAppImgs,
             mobile: false,
             gitHubRepo: 'https://github.com/adryanfrey/Invoice-App',
-            siteLink: 'https://invoice-app-b9eae.web.app/' 
+            siteLink: 'https://invoice-app-b9eae.web.app/'
         },
         {
             title: 'Apple Website Clone',
@@ -180,13 +184,73 @@ export default function Projects() {
         window.open(link, '_blank')
     }
 
+    // handle projects modal
+    const handleAllProjects = () => {
+        gsap.to('.titleContainer', { x: -1000 })
+        gsap.to('.imgContainer', { x: 1000 })
+        gsap.to('.container2', { y: 200, opacity: 0 })
+        gsap.to('.projects', { height: '100vh' })
+        gsap.to('.navbar', { opacity: 0 })
+
+        setTimeout(() => {
+            setProjectsVisible(true)
+        }, [500])
+    }
+
+    // handle contact modal
+    const handleContact = () => {
+        gsap.to('.titleContainer', { x: -1000 })
+        gsap.to('.imgContainer', { x: 1000 })
+        gsap.to('.container2', { y: 200, opacity: 0 })
+        gsap.to('.projects', { height: '100vh' })
+        gsap.to('.navbar', { opacity: 0 })
+
+        setTimeout(() => {
+            setContactVisible(true)
+        }, [500])
+    }
+
+
+    // handle navbar mobile
+    const handleCloseNavbar = (url = undefined) => {
+        const navbar = document.querySelector('.nav-mobile')
+        const container = document.querySelector('.projectsContainer')
+
+        navbar.style.transform = 'translate(-100%,0)'
+        container.style.height = '100%'
+        container.style.overflow = ''
+
+        if (url === '/#section3' || url === '/') {
+            setTimeout(() => {
+                navigate(url)
+            }, 200)
+        }
+    }
+
+    const handleOpenNavbar = () => {
+        const navbar = document.querySelector('.nav-mobile')
+        const container = document.querySelector('.projectsContainer')
+
+        navbar.style.transform = 'translate(0,0)'
+        container.style.height = '100vh'
+        container.style.overflow = 'hidden'
+    }
+
 
     if (loading) {
         return <Loading setLoading={setLoading} />
     }
 
+    if (projectsVisible) {
+        return <AllProjects loading={setLoading} setProjectsVisible={setProjectsVisible} />
+    }
+
+    if (contactVisible) {
+        return <Contact setContactVisible={setContactVisible}/>
+    }
+
     return (
-        <>
+        <div className='projectsContainer'>
             <main className='projects'>
                 <header className='navbar navbarProjects'>
                     <div onClick={() => handleNav('/')} className="navbar-logo">
@@ -197,11 +261,26 @@ export default function Projects() {
                     <nav className='navbar-container'>
                         <ul>
                             <li onClick={() => handleNav('/')}><a href='#'>Back home</a></li>
-                            <li><a href='#'>All projects</a></li>
-                            <li><a href='#'>Contact</a></li>
+                            <li onClick={handleAllProjects}><a href='#'>All projects</a></li>
+                            <li onClick={handleContact}><a href='#'>Contact</a></li>
                         </ul>
                     </nav>
-                    <i id='mobile-bar' className="fa-solid fa-bars"></i>
+                    <i onClick={handleOpenNavbar} id='mobile-bar' className="fa-solid fa-bars"></i>
+                    <div className='nav-mobile'>
+                        <div className='icon-container' onClick={handleCloseNavbar}>
+                            <i className="fa-solid fa-xmark"></i>
+                        </div>
+                        <ul>
+                            <li onClick={() => handleCloseNavbar('/')}>Back home</li>
+                            <li onClick={() => handleCloseNavbar('/#section1')}>All projects</li>
+                            <li onClick={() => handleCloseNavbar('/#section3')}>Contact</li>
+                        </ul>
+                        <div className='socialMediaNav'>
+                            <a href="http://www.linkedin.com/in/adryan-frey"><i className="fa-brands fa-linkedin"></i></a>
+                            <a href="https://github.com/adryanfrey"><i className="fa-brands fa-github"></i></a>
+                            <a href="https://www.instagram.com/adryanfrey"><i className="fa-brands fa-instagram"></i></a>
+                        </div>
+                    </div>
                 </header>
 
                 <div className='container1 container'>
@@ -209,17 +288,17 @@ export default function Projects() {
                         <h1> {projectData[id - 1].title}</h1>
                         <p>{projectData[id - 1].subtitle}</p>
                         <div className='btn-container'>
-                            <button onClick={() => handleLinks(projectData[id -1].siteLink)}>
+                            <button onClick={() => handleLinks(projectData[id - 1].siteLink)}>
                                 <span>Visit Website</span>
                                 <HiArrowCircleRight className='button-icon' />
                             </button>
-                            <button onClick={() => handleLinks(projectData[id -1].gitHubRepo)}>
+                            <button onClick={() => handleLinks(projectData[id - 1].gitHubRepo)}>
                                 <span>Github Repo</span>
                                 <HiArrowCircleRight className='button-icon' />
                             </button>
                         </div>
                     </div>
-                    <div onClick={() => handleLinks(projectData[id -1].siteLink)} className='imgContainer'>
+                    <div onClick={() => handleLinks(projectData[id - 1].siteLink)} className='imgContainer'>
                         <img src={projectData[id - 1].banner} alt="Project Image" />
                     </div>
                 </div>
@@ -233,7 +312,7 @@ export default function Projects() {
                 <div className='introduction'>
                     <h1>Introduction</h1>
                     <p className='projectIntroduction'>{projectData[id - 1].introduction}</p>
-                    <button onClick={() => handleLinks(projectData[id -1].siteLink)} className='visitSiteButton'>
+                    <button onClick={() => handleLinks(projectData[id - 1].siteLink)} className='visitSiteButton'>
                         <span>Visit Website</span>
                         <HiArrowCircleRight className='button-icon' />
                     </button>
@@ -245,7 +324,7 @@ export default function Projects() {
                     ))}
                 </Swiper>
 
-                <div className='features'>
+                <div className='projectFeatures'>
                     <h1 className='featuresTitle'>Features</h1>
                     <p className='featuresText'>{projectData[id - 1].features}</p>
                 </div>
@@ -272,7 +351,7 @@ export default function Projects() {
             </section>
 
             <Footer />
-        </>
+        </div>
 
 
     )

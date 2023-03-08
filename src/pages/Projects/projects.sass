@@ -1,351 +1,350 @@
-.projects
-    display: flex
-    flex-direction: column
-    justify-content: space-between
-    align-items: center
-    height: 90vh
-    position: relative
-    overflow: hidden
-    @media (max-width: 1020px)
-        height: 100%
-
-    .navbarProjects
-        position: static
-        width: 80%
-
-    .container
-        transform: scale(4)
-
-    .container1
+.projectsContainer
+    height: 100%    
+    .projects
         display: flex
+        flex-direction: column
+        justify-content: space-between
         align-items: center
-        width: 70%
-        justify-content: center
-        gap: 3rem  
-        margin-top: 100px
-
-        @media (max-width: 1700px)
-            gap: 0
-            justify-content: space-between
-            padding: 0
-
-        @media (max-width: 1300px)
-            flex-direction: column
-            justify-content: center
-            margin-top: 2rem
+        height: 90vh
+        position: relative
+        overflow: hidden
         @media (max-width: 1020px)
+            height: 100%
+
+        .navbarProjects
+            position: static
+            width: 80%
+
+        .container
+            transform: scale(4)
+
+        .container1
+            display: flex
+            align-items: center
+            width: 70%
+            justify-content: center
+            gap: 3rem  
             margin-top: 100px
 
-        .titleContainer
-            width: 40%
+            @media (max-width: 1700px)
+                gap: 0
+                justify-content: space-between
+                padding: 0
 
             @media (max-width: 1300px)
-                display: flex
+                flex-direction: column
+                justify-content: center
+                margin-top: 2rem
+            @media (max-width: 1020px)
+                margin-top: 100px
+
+            .titleContainer
+                width: 40%
+
+                @media (max-width: 1300px)
+                    display: flex
+                    flex-direction: column
+                    align-items: center
+                    margin-bottom: 4rem
+                    width: 100%
+                @media (max-width: 1020px)
+                    margin-top: 2rem
+
+                h1
+                    color: #fff
+                    font-size: 4rem
+                    margin-bottom: 2rem
+                    line-height: 70px
+                    width: 480px
+
+                    @media (max-width: 1380px)
+                        font-size: 3.5rem
+                    @media (max-width: 1300px)
+                        margin-bottom: 0
+                        text-align: center
+                    @media (max-width: 530px)
+                        font-size: 2.5rem
+
+                p
+                    color: #fff
+                    font-size: 2rem
+                    font-style: italic
+                    font-weight: 200
+
+                    @media (max-width: 1380px)
+                        font-size: 1.7rem
+
+                    @media(max-width: 1300px)
+                        text-align: center
+                    @media (max-width: 530px)
+                        font-size: 1.3rem
+
+                .btn-container
+                    margin-top: 2rem
+                    display: flex
+                    gap: 2rem
+                    @media (max-width: 530px)
+                        gap: 1rem
+
+                    button
+                        background: #25a9d7
+                        color: #fff
+                        border: none
+                        display: flex
+                        width: 160px
+                        align-items: center
+                        justify-content: center
+                        height: 40px
+                        margin-top: 1rem
+                        text-transform: uppercase
+                        cursor: pointer
+                        transform: skew(-21deg)
+
+                        @media (max-width: 1300px)
+                            margin-top: 0
+
+                        @media (max-width: 530px)
+                            width: 130px
+
+                        span
+                            display: inline-block
+                            transform: skew(21deg)
+                            margin-right: .4rem
+
+                        .button-icon
+                            transform: skew(21deg)
+
+                        &::before
+                            content: ''
+                            position: absolute
+                            top: 0
+                            bottom: 0
+                            right: 100%
+                            left: 0
+                            background: #fff
+                            opacity: 0
+                            z-index: -1
+                            transition: all 0.5s
+
+                        &:hover
+                            color: #000
+
+                        &:hover::before
+                            left: 0
+                            right: 0
+                            opacity: 1
+
+            .imgContainer
+                width: 45%
+                min-width: 450px
+                cursor: pointer
+
+                @media (max-width: 1020px)
+                    margin-bottom: 4rem
+
+                @media (max-width: 600px)
+                    min-width: 0
+                    width: 100%
+
+                img
+                    width: 100%
+                    filter: drop-shadow(0px 0px 20px #25a9d7)
+                    transition: filter .4s
+
+                    &:hover
+                        filter: drop-shadow(0px 0px 20px #ffffff)
+
+        .container2
+            margin-bottom: 50px
+            width: 60%
+            display: flex
+            justify-content: space-between
+            @media (max-width: 860px)
                 flex-direction: column
                 align-items: center
-                margin-bottom: 4rem
-                width: 100%
-            @media (max-width: 1020px)
-                margin-top: 2rem
-
-            h1
-                color: #fff
-                font-size: 4rem
-                margin-bottom: 2rem
-                line-height: 70px
-                width: 480px
-
-                @media (max-width: 1380px)
-                    font-size: 3.5rem
-                @media (max-width: 1300px)
-                    margin-bottom: 0
-                    text-align: center
-                @media (max-width: 530px)
-                    font-size: 2.5rem
+                text-align: center
+                gap: 1rem
 
             p
                 color: #fff
-                font-size: 2rem
-                font-style: italic
-                font-weight: 200
+                text-transform: uppercase
+                font-weight: bold
+                width: 240px
 
-                @media (max-width: 1380px)
-                    font-size: 1.7rem
+                span
+                    color: #25a9d7
 
-                @media(max-width: 1300px)
-                    text-align: center
-                @media (max-width: 530px)
-                    font-size: 1.3rem
-
-            .btn-container
-                margin-top: 2rem
-                display: flex
-                gap: 2rem
-                @media (max-width: 530px)
-                    gap: 1rem
-
-                button
-                    background: #25a9d7
-                    color: #fff
-                    border: none
-                    display: flex
-                    width: 160px
-                    align-items: center
-                    justify-content: center
-                    height: 40px
-                    margin-top: 1rem
-                    text-transform: uppercase
-                    cursor: pointer
-                    transform: skew(-21deg)
-
-                    @media (max-width: 1300px)
-                        margin-top: 0
-
-                    @media (max-width: 530px)
-                        width: 130px
-
-                    span
-                        display: inline-block
-                        transform: skew(21deg)
-                        margin-right: .4rem
-
-                    .button-icon
-                        transform: skew(21deg)
-
-                    &::before
-                        content: ''
-                        position: absolute
-                        top: 0
-                        bottom: 0
-                        right: 100%
-                        left: 0
-                        background: #fff
-                        opacity: 0
-                        z-index: -1
-                        transition: all 0.5s
-
-                    &:hover
-                        color: #000
-
-                    &:hover::before
-                        left: 0
-                        right: 0
-                        opacity: 1
-
-        .imgContainer
-            width: 45%
-            min-width: 450px
-            transition: transform .4s
-            cursor: pointer
-
-            @media (max-width: 1020px)
-                margin-bottom: 4rem
-
-            @media (max-width: 600px)
-                min-width: 0
-                width: 100%
-
-            &:hover
-                transform: scale(1.1)
-
-            img
-                width: 100%
-                filter: drop-shadow(0px 0px 20px #a0e3ec)
-
-                &:hover
-                    filter: drop-shadow(0px 0px 20px #ffffff)
-
-    .container2
-        margin-bottom: 50px
-        width: 60%
+    .introductionContainer
         display: flex
         justify-content: space-between
-        @media (max-width: 860px)
-            flex-direction: column
-            align-items: center
-            text-align: center
-            gap: 1rem
-
-        p
-            color: #fff
-            text-transform: uppercase
-            font-weight: bold
-            width: 240px
-
-            span
-                color: #25a9d7
-
-.introductionContainer
-    display: flex
-    justify-content: space-between
-    width: 100%
-    background-color: #fff
-    margin: 0 auto
-    gap: 1rem
-    flex-direction: column
-    align-items: center
-
-    .introduction
-        display: flex
+        width: 100%
+        background-color: #fff
+        margin: 0 auto
+        gap: 1rem
         flex-direction: column
-        justify-content: center
         align-items: center
-        padding: 3rem
 
-        h1
-            font-size: 3rem
-            color: #25a9d7
-
-            @media (max-width: 560px)
-                font-size: 2.5rem
-
-        p
-            max-width: 800px
-            font-size: 1.2rem
-            margin: 1rem 0
-            text-align: center
-            transform: translate(0, 40%)
-            opacity: 0
-
-        button
-            background: #25a9d7
-            color: #fff
-            border: none
+        .introduction
             display: flex
-            width: 160px
-            align-items: center
-            justify-content: center
-            height: 40px
-            margin-top: 1rem
-            text-transform: uppercase
-            cursor: pointer
-            transform: skew(-21deg) translate(0, 40%)
-            opacity: 0
-
-            span
-                display: inline-block
-                transform: skew(21deg)
-                margin-right: .4rem
-
-            .button-icon
-                transform: skew(21deg)
-
-            &::before
-                content: ''
-                position: absolute
-                top: 0
-                bottom: 0
-                right: 100%
-                left: 0
-                background: #fff
-                opacity: 0
-                z-index: -1
-                transition: all 0.5s
-
-            &:hover
-                color: #000
-                border: 1px solid #25a9d7
-
-            &:hover::before
-                left: 0
-                right: 0
-                opacity: 1
-
-    .features
-        display: flex
-        justify-content: center
-        align-items: center
-        flex-direction: column
-        padding: 3rem
-        margin-bottom: 2rem
-        transform: translate(0, 20%)
-        opacity: 0
-
-        h1
-            font-size: 3rem
-            color: #25a9d7
-
-            @media (max-width: 560px)
-                font-size: 2.5rem
-
-        p
-            max-width: 800px
-            font-size: 1.2rem
-            margin-top: 1rem
-            text-align: center
-
-    .mobileContainer
-        display: flex
-        width: 60%
-        margin: 1rem auto
-        margin-bottom: 2rem
-        align-items: center
-        @media (max-width: 1420px)
             flex-direction: column
-            width: 85%
-        @media (max-width: 800px)
-            width: 90%
-
-        .mobileText
-            width: 50%
-            opacity: 0
-            transform: translate(-30%, 0)
-
-            @media (max-width: 1420px)
-                order: 2
-                width: 100%
-                padding: 0 3rem
-                text-align: center
-                margin-top: 2rem
-                margin-bottom: 2rem
+            justify-content: center
+            align-items: center
+            padding: 3rem
 
             h1
-                color: #25a9d7
                 font-size: 3rem
-                margin-bottom: 2rem
+                color: #25a9d7
+
                 @media (max-width: 560px)
                     font-size: 2.5rem
 
             p
-
-                height: calc(100% - 95px)
-                min-width: 300px
-                width: 80%
+                max-width: 800px
                 font-size: 1.2rem
-                @media (max-width: 1420px)
-                    width: 100%
-                    min-width: 0
+                margin: 1rem 0
+                text-align: center
+                transform: translate(0, 40%)
+                opacity: 0
 
-        .mobileSwiper
-            min-width: 500px
+            button
+                background: #25a9d7
+                color: #fff
+                border: none
+                display: flex
+                width: 160px
+                align-items: center
+                justify-content: center
+                height: 40px
+                margin-top: 1rem
+                text-transform: uppercase
+                cursor: pointer
+                transform: skew(-21deg) translate(0, 40%)
+                opacity: 0
+
+                span
+                    display: inline-block
+                    transform: skew(21deg)
+                    margin-right: .4rem
+
+                .button-icon
+                    transform: skew(21deg)
+
+                &::before
+                    content: ''
+                    position: absolute
+                    top: 0
+                    bottom: 0
+                    right: 100%
+                    left: 0
+                    background: #fff
+                    opacity: 0
+                    z-index: -1
+                    transition: all 0.5s
+
+                &:hover
+                    color: #000
+                    border: 1px solid #25a9d7
+
+                &:hover::before
+                    left: 0
+                    right: 0
+                    opacity: 1
+
+        .projectFeatures
+            display: flex
+            justify-content: center
+            align-items: center
+            flex-direction: column
+            padding: 3rem
+            margin-bottom: 2rem
+            transform: translate(0, 20%)
+            opacity: 0
+
+            h1
+                font-size: 3rem
+                color: #25a9d7
+
+                @media (max-width: 560px)
+                    font-size: 2.5rem
+
+            p
+                max-width: 800px
+                font-size: 1.2rem
+                margin-top: 1rem
+                text-align: center
+
+        .mobileContainer
+            display: flex
             width: 60%
+            margin: 1rem auto
+            margin-bottom: 2rem
+            align-items: center
             @media (max-width: 1420px)
-                order: 1
-                width: 45%
-            @media (max-width: 580px)
-                min-width: 0s
-                width: 95%  
+                flex-direction: column
+                width: 85%
+            @media (max-width: 800px)
+                width: 90%
+
+            .mobileText
+                width: 50%
+                opacity: 0
+                transform: translate(-30%, 0)
+
+                @media (max-width: 1420px)
+                    order: 2
+                    width: 100%
+                    padding: 0 3rem
+                    text-align: center
+                    margin-top: 2rem
+                    margin-bottom: 2rem
+
+                h1
+                    color: #25a9d7
+                    font-size: 3rem
+                    margin-bottom: 2rem
+                    @media (max-width: 560px)
+                        font-size: 2.5rem
+
+                p
+
+                    height: calc(100% - 95px)
+                    min-width: 300px
+                    width: 80%
+                    font-size: 1.2rem
+                    @media (max-width: 1420px)
+                        width: 100%
+                        min-width: 0
+
+            .mobileSwiper
+                min-width: 500px
+                width: 60%
+                @media (max-width: 1420px)
+                    order: 1
+                    width: 45%
+                @media (max-width: 580px)
+                    min-width: 0
+                    width: 95%  
+
+                img
+                    width: 100%
+
+        .swiper
+            width: 50%
+            min-width: 800px
+            height: 100%
+            transition: .4s
+            cursor: -webkit-grabbing
+            filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, 0.8))
+            opacity: 0
+            transform: translate(0, 30%)
+
+            @media(max-width: 1020px)
+                min-width: 0
+                width: 80%
 
             img
                 width: 100%
 
-    .swiper
-        width: 50%
-        min-width: 800px
-        height: 100%
-        transition: .4s
-        cursor: -webkit-grabbing
-        filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, 0.8))
-        opacity: 0
-        transform: translate(0, 30%)
-
-        @media(max-width: 1020px)
-            min-width: 0
-            width: 80%
-
-        img
-            width: 100%
-
-    @media (hover:hover)
-        .swiper:hover
-            transform: scale(1.1)
+        @media (hover:hover)
+            .swiper:hover
+                transform: scale(1.1)
