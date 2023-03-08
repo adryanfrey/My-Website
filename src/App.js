@@ -2,7 +2,7 @@
 import './styles/main.sass'
 
 // hooks
-import  { BrowserRouter, Routes, Route } from 'react-router-dom'
+import  { Routes, Route, HashRouter} from 'react-router-dom'
 import { useState } from 'react';
 
 // pages
@@ -14,12 +14,12 @@ function App() {
  
   return (
     <div>
-      <BrowserRouter>
+      <HashRouter>
         <Routes>
           <Route path='/' element={<Home />}/>
           <Route path='/projects/:id' element={<Projects />}/>
         </Routes>
-      </BrowserRouter>
+      </HashRouter>
       
     </div>
   );
