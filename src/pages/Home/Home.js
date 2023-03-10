@@ -340,7 +340,7 @@ const Home = () => {
             </button>
           </div>
 
-          <div onClick={() => handleNavigate('/projects/4')} className='project project4'>
+          <div onClick={() => handleNavigate('/projects/3')} className='project project3'>
             <div className='filter'></div>
             <h2>Pizzeria Pro</h2>
             <p>Complete system for managing customer orders in a restaurant.</p>
@@ -350,7 +350,7 @@ const Home = () => {
             </button>
           </div>
 
-          <div onClick={() => handleNavigate('/projects/3')} className='project project3'>
+          <div onClick={() => handleNavigate('/projects/4')} className='project project4'>
             <div className='filter'></div>
             <h2>Apple Website Clone</h2>
             <p>Full animated apple website</p>
