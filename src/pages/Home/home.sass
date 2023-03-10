@@ -19,7 +19,6 @@
         display: flex
         align-items: center
         justify-content: space-between
-        transform: scale(4)
         @media (max-width: 1020px)
             flex-direction: column
             padding-top: 150px
@@ -31,6 +30,8 @@
             flex-direction: column
             width: 50%
             z-index: 5
+            opacity: 0
+            transform: translate(-300px, 0)
             @media (max-width: 1020px)
                 width: 100%
                 align-items: center
@@ -115,6 +116,8 @@
             min-width: 500px
             z-index: 4
             margin-top: 70px
+            opacity: 0
+            transform: translate(300px, 0)
             @media (max-width: 1020px)
                 margin-top: -50px
                 width: 90%

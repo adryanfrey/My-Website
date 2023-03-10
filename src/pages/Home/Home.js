@@ -56,10 +56,9 @@ const Home = () => {
       }
     }
 
-    const mainContainer = document.querySelector('.main-container')
-
     // first load animation
-    gsap.to('.main-container', { scale: 1, duration: 1, ease: 'back.out(1)' })
+    gsap.to('.main-container-text', {x: 1, duration: 1, opacity: 1, ease: "power2.out"})
+    gsap.to('.main-container-img', {x: 1, duration: 1, opacity: 1, ease: "power2.out"})
 
     // skills animation
     gsap.to('.skill-container', {
