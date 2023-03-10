@@ -129,8 +129,8 @@ const Home = () => {
   const handleNavigate = (url) => {
     gsap.to('.project1', {opacity: 0, x: -400, duration: 1})
     gsap.to('.project2', {opacity: 0, x: 400, duration: 1})
-    gsap.to('.project3', {opacity: 0, x: -400, duration: 1})
-    gsap.to('.project4', {opacity: 0, x: 400, duration: 1})
+    gsap.to('.project4', {opacity: 0, x: -400, duration: 1})
+    gsap.to('.project3', {opacity: 0, x: 400, duration: 1})
     gsap.to('.section2title', {opacity: 0})
 
     gsap.to('.section1', {y: -600, duration: 1})
@@ -341,16 +341,6 @@ const Home = () => {
             </button>
           </div>
 
-          <div onClick={() => handleNavigate('/projects/3')} className='project project3'>
-            <div className='filter'></div>
-            <h2>Apple Website Clone</h2>
-            <p>Full animated apple website</p>
-            <button >
-              <span>See Project</span>
-              <HiArrowCircleRight className='button-icon' />
-            </button>
-          </div>
-
           <div onClick={() => handleNavigate('/projects/4')} className='project project4'>
             <div className='filter'></div>
             <h2>Pizzeria Pro</h2>
@@ -361,6 +351,15 @@ const Home = () => {
             </button>
           </div>
 
+          <div onClick={() => handleNavigate('/projects/3')} className='project project3'>
+            <div className='filter'></div>
+            <h2>Apple Website Clone</h2>
+            <p>Full animated apple website</p>
+            <button >
+              <span>See Project</span>
+              <HiArrowCircleRight className='button-icon' />
+            </button>
+          </div>
         </div>
       </section>
 

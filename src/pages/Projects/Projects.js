@@ -143,19 +143,6 @@ export default function Projects() {
             siteLink: 'https://invoice-app-b9eae.web.app/'
         },
         {
-            title: 'Apple Website Clone',
-            subtitle: 'Fully animated apple website',
-            role: 'Frontend Developer',
-            introduction: 'This apple website clone its a personal project to attest my skills as a frontend developer.',
-            features: 'Apple clone landing page fully animated',
-            banner: project3,
-            imgs: iphoneCloneImgs,
-            mobile: false,
-            gitHubRepo: 'https://github.com/adryanfrey/Iphone-Website-Clone',
-            siteLink: 'https://adryanfrey.github.io/Iphone-Website-Clone/'
-
-        },
-        {
             title: 'Pizzeria Pro',
             subtitle: 'Complete system for managing customer orders in a restaurant.',
             role: 'Fullstack Developer',
@@ -168,7 +155,20 @@ export default function Projects() {
             mobileFeatures: 'Our mobile app simplifies the restaurant experience for both waiters and customers. With our easy-to-use system, waiters can quickly take and manage customer orders with all the necessary details, without having to worry about manually recording them on paper. Orders are immediately sent to the cashier for efficient processing. In addition, our app offers a comprehensive catalog of the restaurants menu, conveniently divided into  categories for quick and easy selection. This helps waiters to take orders more accurately and efficiently, and provides customers with an enjoyable, hassle-free dining experience.',
             siteLink: 'https://pizzeria-pro-web-ymj5.vercel.app/',
             gitHubRepo: 'https://github.com/adryanfrey/pizzeria-pro-web',
-        }
+        },
+        {
+            title: 'Apple Website Clone',
+            subtitle: 'Fully animated apple website',
+            role: 'Frontend Developer',
+            introduction: 'This apple website clone its a personal project to attest my skills as a frontend developer.',
+            features: 'Apple clone landing page fully animated',
+            banner: project3,
+            imgs: iphoneCloneImgs,
+            mobile: false,
+            gitHubRepo: 'https://github.com/adryanfrey/Iphone-Website-Clone',
+            siteLink: 'https://adryanfrey.github.io/Iphone-Website-Clone/'
+
+        },
     ]
 
     // navigate
@@ -236,10 +236,17 @@ export default function Projects() {
         container.style.height = '100%'
         container.style.overflow = ''
 
-        if (url === '/#section3' || url === '/') {
-            setTimeout(() => {
-                navigate(url)
-            }, 200)
+        if (url === '/') {
+                navigate('/')
+        }
+
+        if (url === '/allProjects') {
+                setProjectsVisible(true)
+        }
+
+        if (url === '/contact') {
+   
+                setContactVisible(true)
         }
     }
 
@@ -288,8 +295,8 @@ export default function Projects() {
                         </div>
                         <ul>
                             <li onClick={() => handleCloseNavbar('/')}>Back home</li>
-                            <li onClick={() => handleCloseNavbar('/#section1')}>All projects</li>
-                            <li onClick={() => handleCloseNavbar('/#section3')}>Contact</li>
+                            <li onClick={() => handleCloseNavbar('/allProjects')}>All projects</li>
+                            <li onClick={() => handleCloseNavbar('/contact')}>Contact</li>
                         </ul>
                         <div className='socialMediaNav'>
                             <a href="http://www.linkedin.com/in/adryan-frey"><i className="fa-brands fa-linkedin"></i></a>
