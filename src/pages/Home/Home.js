@@ -27,11 +27,12 @@ import emailjs from 'emailjs-com'
 import { HiArrowCircleRight } from 'react-icons/hi'
 import { useNavigate } from 'react-router-dom'
 import { IoMdRocket } from 'react-icons/io'
+import {AiOutlineLoading} from 'react-icons/ai'
 
 // components
 import Footer from '../../components/Footer/Footer'
 import Loading from '../../components/Loading/Loading'
-import Contact from '../../components/Contact/Contact'
+import { toast } from 'react-toastify'
 
 const Home = () => {
   gsap.registerPlugin(ScrollTrigger)
@@ -40,6 +41,8 @@ const Home = () => {
   const [loading, setLoading] = useState(true)
   const [windowSize, setWindowSize] = useState(window.innerWidth)
   const navigate = useNavigate()
+  const [formLoading, setFormLoading] = useState(false)
+  const [btnClass, setBtnClass] = useState('')
 
   // all animations
   useEffect(() => {
@@ -96,21 +99,11 @@ const Home = () => {
     })
 
     // contact animation
-    gsap.to('.img-bg', {
-      opacity: 1, duration: 1, x: 0, ease: "power2.out", scrollTrigger: {
-        trigger: '.contact-container',
-        start: 'top 50%',
-      }
-    })
 
-    gsap.to('.formMessage', {
-      opacity: 1, duration: 1, x: 0, ease: "power2.out", scrollTrigger: {
-        trigger: '.contact-container',
-        start: 'top 50%',
-      }
-    })
-
-
+    gsap.to('.email-container', {opacity: 1, y: 0, duration: 1, ease: "power2.out", scrollTrigger: {
+      trigger: '.email-container',
+      start: 'top 90%',
+    }})
   }, [loading])
 
 
@@ -134,13 +127,18 @@ const Home = () => {
 
   // navigate
   const handleNavigate = (url) => {
-    const home = document.querySelector('.home')
-    console.log(home)
-    gsap.to(home, { scale: 5, duration: .6, opacity: 0, transformOrigin: 'center' })
+    gsap.to('.project1', {opacity: 0, x: -400, duration: 1})
+    gsap.to('.project2', {opacity: 0, x: 400, duration: 1})
+    gsap.to('.project3', {opacity: 0, x: -400, duration: 1})
+    gsap.to('.project4', {opacity: 0, x: 400, duration: 1})
+    gsap.to('.section2title', {opacity: 0})
+
+    gsap.to('.section1', {y: -600, duration: 1})
+    gsap.to('.section3', {y: 600, duration: 1})
 
     setTimeout(() => {
       navigate(url)
-    }, 500)
+    }, 800)
 
   }
 
@@ -149,12 +147,12 @@ const Home = () => {
     const home = document.querySelector('.home')
 
     navbar.style.transform = 'translate(-100%,0)'
-    home.style.height = '100%' 
+    home.style.height = '100%'
     home.style.overflow = ''
 
-     if (scroll === '#section1' || scroll === '#section2' || scroll === '#section3') {
+    if (scroll === '#section1' || scroll === '#section2' || scroll === '#section3') {
       setTimeout(() => {
-        
+
         document.querySelector(scroll).scrollIntoView()
       }, 200)
     }
@@ -165,9 +163,27 @@ const Home = () => {
     const home = document.querySelector('.home')
 
     navbar.style.transform = 'translate(0,0)'
-    home.style.height = '100vh' 
+    home.style.height = '100vh'
     home.style.overflow = 'hidden'
-   
+
+  }
+
+  const handleMessage = async (e) => {
+    e.preventDefault()
+
+    setFormLoading(true)
+    setBtnClass('disabled')
+
+    try {
+      await emailjs.sendForm('service_yynju27', 'template_hlzd56y', e.target, 'EFiuWxNTSflYwcYLU')
+      toast.success('Thanks for your message, I will return ASAP :)')
+    } catch (error) {
+      toast.warn('Sorry there was an error')
+    }
+       
+    setFormLoading(false)
+    setBtnClass('')
+    e.target.reset()
   }
 
   return (
@@ -180,10 +196,10 @@ const Home = () => {
 
         <nav className='navbar-container'>
           <ul>
-            <li><a className='link' href='#'><div className='whiteBorder' />Home  <div className='blueBorder' /></a></li>
-            <li><a className='link' href='#section1'><div className='whiteBorder' /> Skills <div className='blueBorder' /></a></li>
-            <li><a className='link' href='#section2'><div className='whiteBorder' /> Projects <div className='blueBorder' /></a></li>
-            <li><a className='link' href='#section3'><div className='whiteBorder' /> Contact <div className='blueBorder' /></a></li>
+            <li><a className='link'><div className='whiteBorder' />Home  <div className='blueBorder' /></a></li>
+            <li onClick={() => document.querySelector('.section1').scrollIntoView(false)}><a className='link'><div className='whiteBorder' /> Skills <div className='blueBorder' /></a></li>
+            <li onClick={() => document.querySelector('.section2').scrollIntoView(false)}><a className='link'><div className='whiteBorder' /> Projects <div className='blueBorder' /></a></li>
+            <li onClick={() => document.querySelector('.section3').scrollIntoView(false)}><a className='link'><div className='whiteBorder' /> Contact <div className='blueBorder' /></a></li>
           </ul>
         </nav>
         <i onClick={handleOpenNavbar} id='mobile-bar' className="fa-solid fa-bars"></i>
@@ -303,7 +319,7 @@ const Home = () => {
 
       <section id='section2' className='section2'>
         <div className='projects-container'>
-          <h2>Projects</h2>
+          <h2 className='section2title'>Projects</h2>
 
           <div onClick={() => handleNavigate('/projects/1')} className='project project1'>
             <div className='filter'></div>
@@ -349,7 +365,31 @@ const Home = () => {
       </section>
 
       <section id='section3' className='section3'>
-        <Contact />
+        <h2 className='title'>Contact</h2>
+        <div className='email-container'>
+          <div className='img-bg'>
+            <h3 className='h3-top'><i className="fa-solid fa-phone"></i> +31 6 29800492</h3>
+            <h3 className='h3-bot'><i className="fa-solid fa-envelope"></i>adryanfrey886@gmail.com</h3>
+          </div>
+          <form className='formMessage' onSubmit={(e) => handleMessage(e)}>
+            <h2>Send me a message!</h2>
+            <label>
+              Name:
+              <input name='name' type="text" placeholder='Your Name' required />
+            </label>
+            <label>
+              Email:
+              <input name='email' type="email" placeholder='Your Email' required />
+            </label>
+            <label>
+              Message:
+              <textarea name='message' placeholder='Message' required />
+            </label>
+            <button className={btnClass} disabled={formLoading}  type='submit'>
+              {formLoading ? (<AiOutlineLoading className='icon' size={20} color='#fff'/>) : ('Send')}
+            </button>
+          </form>
+        </div>
       </section>
 
       <button className='to-top'>

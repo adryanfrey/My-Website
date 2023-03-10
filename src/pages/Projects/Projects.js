@@ -68,7 +68,9 @@ export default function Projects() {
     useEffect(() => {
 
         // first load animation
-        gsap.to('.container', { scale: 1, duration: 1.3, ease: 'back.out(1)' })
+        gsap.to('.titleContainer', { opacity: 1, x: 0, duration: 1, ease: "power2.out" })
+        gsap.to('.imgContainer', { opacity: 1, x: 0, duration: 1, ease: "power2.out" })
+        gsap.to('.container2', {opacity: 1, y: 0, duration: 1, delay: .5})
 
         // scroll animation
         gsap.to('.projectIntroduction', {
@@ -163,7 +165,9 @@ export default function Projects() {
             imgs: pizzeriaProImgs,
             imgsMobile: pizzeriaProMobile,
             mobile: true,
-            mobileFeatures: 'Our mobile app simplifies the restaurant experience for both waiters and customers. With our easy-to-use system, waiters can quickly take and manage customer orders with all the necessary details, without having to worry about manually recording them on paper. Orders are immediately sent to the cashier for efficient processing. In addition, our app offers a comprehensive catalog of the restaurants menu, conveniently divided into  categories for quick and easy selection. This helps waiters to take orders more accurately and efficiently, and provides customers with an enjoyable, hassle-free dining experience.'
+            mobileFeatures: 'Our mobile app simplifies the restaurant experience for both waiters and customers. With our easy-to-use system, waiters can quickly take and manage customer orders with all the necessary details, without having to worry about manually recording them on paper. Orders are immediately sent to the cashier for efficient processing. In addition, our app offers a comprehensive catalog of the restaurants menu, conveniently divided into  categories for quick and easy selection. This helps waiters to take orders more accurately and efficiently, and provides customers with an enjoyable, hassle-free dining experience.',
+            siteLink: 'https://pizzeria-pro-web-ymj5.vercel.app/',
+            gitHubRepo: 'https://github.com/adryanfrey/pizzeria-pro-web',
         }
     ]
 
@@ -210,6 +214,18 @@ export default function Projects() {
         }, [500])
     }
 
+    const handleBackHome = () => {
+        gsap.to('.titleContainer', { x: -1000 })
+        gsap.to('.imgContainer', { x: 1000 })
+        gsap.to('.container2', { y: 200, opacity: 0 })
+        gsap.to('.projects', { height: '100vh' })
+        gsap.to('.navbar', { opacity: 0 })
+
+        setTimeout(() => {
+            navigate('/')
+        }, [500])
+    }
+
 
     // handle navbar mobile
     const handleCloseNavbar = (url = undefined) => {
@@ -246,7 +262,7 @@ export default function Projects() {
     }
 
     if (contactVisible) {
-        return <Contact setContactVisible={setContactVisible}/>
+        return <Contact setContactVisible={setContactVisible} />
     }
 
     return (
@@ -260,9 +276,9 @@ export default function Projects() {
 
                     <nav className='navbar-container'>
                         <ul>
-                            <li onClick={() => handleNav('/')}><a href='#'>Back home</a></li>
-                            <li onClick={handleAllProjects}><a href='#'>All projects</a></li>
-                            <li onClick={handleContact}><a href='#'>Contact</a></li>
+                            <li onClick={handleBackHome}><a>Back home</a></li>
+                            <li onClick={handleAllProjects}><a>All projects</a></li>
+                            <li onClick={handleContact}><a>Contact</a></li>
                         </ul>
                     </nav>
                     <i onClick={handleOpenNavbar} id='mobile-bar' className="fa-solid fa-bars"></i>

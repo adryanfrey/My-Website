@@ -15,9 +15,6 @@
             position: static
             width: 80%
 
-        .container
-            transform: scale(4)
-
         .container1
             display: flex
             align-items: center
@@ -40,6 +37,8 @@
 
             .titleContainer
                 width: 40%
+                opacity: 0
+                transform: translate(-300px, 0)
 
                 @media (max-width: 1300px)
                     display: flex
@@ -138,6 +137,8 @@
                 width: 45%
                 min-width: 450px
                 cursor: pointer
+                transform: translate(300px, 0)
+                opacity: 0
 
                 @media (max-width: 1020px)
                     margin-bottom: 4rem
@@ -159,6 +160,8 @@
             width: 60%
             display: flex
             justify-content: space-between
+            opacity: 0
+            transform: translate(0, 50%)
             @media (max-width: 860px)
                 flex-direction: column
                 align-items: center
