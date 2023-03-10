@@ -128,8 +128,8 @@ const Home = () => {
   const handleNavigate = (url) => {
     gsap.to('.project1', {opacity: 0, x: -400, duration: 1})
     gsap.to('.project2', {opacity: 0, x: 400, duration: 1})
-    gsap.to('.project4', {opacity: 0, x: -400, duration: 1})
-    gsap.to('.project3', {opacity: 0, x: 400, duration: 1})
+    gsap.to('.project3', {opacity: 0, x: -400, duration: 1})
+    gsap.to('.project4', {opacity: 0, x: 400, duration: 1})
     gsap.to('.section2title', {opacity: 0})
 
     gsap.to('.section1', {y: -600, duration: 1})
