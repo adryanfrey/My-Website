@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/My-Website/static/css/main.e49ca933.css",
-    "main.js": "/My-Website/static/js/main.475a1ae7.js",
+    "main.css": "/My-Website/static/css/main.c0a2d409.css",
+    "main.js": "/My-Website/static/js/main.004020b4.js",
     "static/media/iphone2.png": "/My-Website/static/media/iphone2.395d2fb9b1c81d875658.png",
     "static/media/foto-site.png": "/My-Website/static/media/foto-site.077284b13aa977bda0fd.png",
     "static/media/AdryanFrey_CV.pdf": "/My-Website/static/media/AdryanFrey_CV.2fd3d93a3f3c9bb2a6e5.pdf",
@@ -49,11 +49,11 @@
     "static/media/sassLogo.png": "/My-Website/static/media/sassLogo.d0f99d8df2e038cab3bb.png",
     "index.html": "/My-Website/index.html",
     "static/media/typescript.svg": "/My-Website/static/media/typescript.7c2e5f599fa6ccab4be8a590908ec5bb.svg",
-    "main.e49ca933.css.map": "/My-Website/static/css/main.e49ca933.css.map",
-    "main.475a1ae7.js.map": "/My-Website/static/js/main.475a1ae7.js.map"
+    "main.c0a2d409.css.map": "/My-Website/static/css/main.c0a2d409.css.map",
+    "main.004020b4.js.map": "/My-Website/static/js/main.004020b4.js.map"
   },
   "entrypoints": [
-    "static/css/main.e49ca933.css",
-    "static/js/main.475a1ae7.js"
+    "static/css/main.c0a2d409.css",
+    "static/js/main.004020b4.js"
   ]
 }
