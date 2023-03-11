@@ -224,7 +224,7 @@ const Home = () => {
         <div className='main-container'>
           <div className='main-container-text'>
             <h1 data-text='Hello, I am Adryan,' className='title'>Hello, I am Adryan,</h1>
-            <h1 data-text2='Fullstack Developer' className='subtitle'>Fullstack Developer </h1>
+            <h1 data-text2='Fullstack Developer' className='subtitle'>Frontend Developer </h1>
             <p>Aspiring software engineer, seeking to apply competent developement skills with focus on collaboration, communication, and passion.</p>
             <a className='cv' href={cv} download='AdryanFrey_CV.pdf'>Download CV </a>
             <div className='social-media-container'>

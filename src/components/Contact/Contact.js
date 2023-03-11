@@ -46,7 +46,7 @@ const Contact = ({setContactVisible}) => {
     return (
         <div className='contact-container'>
             <button className='closeButton' onClick={handleClose}><i className="fa-solid fa-xmark"></i><span>Close</span></button>
-            <h2 className='title'>Contact</h2>
+            <h2 className='contactTitle'>Contact</h2>
             <div className='email-container'>   
                 <h1 className='message'>Thanks for the message! I will reply ASAP.</h1>
                 <div className='img-bg'>
