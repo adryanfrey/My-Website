@@ -15,7 +15,7 @@ import reactNative from '../../assets/reactNative.png'
 import node from '../../assets/nodejs.png'
 import nextjs from '../../assets/nextjs.png'
 
-import cv from '../../assets/AdryanFrey_CV.pdf'
+import cv from '../../assets/adryanfrey-cv.pdf'
 
 // animations library
 import { gsap } from 'gsap'
