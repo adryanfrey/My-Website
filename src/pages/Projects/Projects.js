@@ -46,6 +46,7 @@ import barberPro3 from '../../assets/barberPro3.png'
 import barberPro4 from '../../assets/barberPro4.png'
 import barberPro5 from '../../assets/barberPro5.png'
 import barberPro6 from '../../assets/barberPro6.png'
+import barberPro7 from '../../assets/barberPro7.png'
 
 
 // hooks
@@ -125,7 +126,7 @@ export default function Projects() {
     const invoiceAppImgs = [invoiceApp1, invoiceApp2, invoiceApp3, invoiceApp4, invoiceApp5, invoiceApp6]
     const pizzeriaProImgs = [pizzeriaPro1, pizzeriaPro2, pizzeriaPro3, pizzeriaPro4, pizzeriaPro5]
     const pizzeriaProMobile = [pizzeriaMobile1, pizzeriaMobile2, pizzeriaMobile3, pizzeriaMobile4, pizzeriaMobile5]
-    const barberProImgs = [barberPro1, barberPro2, barberPro3, barberPro3, barberPro4, barberPro5, barberPro6]
+    const barberProImgs = [barberPro1, barberPro2, barberPro3, barberPro3, barberPro4, barberPro5, barberPro6, barberPro7]
 
     const projectData = [
         {
