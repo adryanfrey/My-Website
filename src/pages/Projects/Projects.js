@@ -9,6 +9,8 @@ import project1 from '../../assets/audiophile.png'
 import project2 from '../../assets/invoiceAppBanner.png'
 import project3 from '../../assets/appleClone.png'
 import project4 from '../../assets/pizzeriaProBanner.png'
+import project5 from '../../assets/barberProBanner.png'
+
 import audiophile1 from '../../assets/audiophile1.png'
 import audiophile2 from '../../assets/audiophile2.png'
 import audiophile3 from '../../assets/audiophile3.png'
@@ -37,6 +39,13 @@ import pizzeriaMobile2 from '../../assets/pizzeriaMobile2.png'
 import pizzeriaMobile3 from '../../assets/pizzeriaMobile3.png'
 import pizzeriaMobile4 from '../../assets/pizzeriaMobile4.png'
 import pizzeriaMobile5 from '../../assets/pizzeriaMobile5.png'
+
+import barberPro1 from '../../assets/barberPro1.png'
+import barberPro2 from '../../assets/barberPro2.png'
+import barberPro3 from '../../assets/barberPro3.png'
+import barberPro4 from '../../assets/barberPro4.png'
+import barberPro5 from '../../assets/barberPro5.png'
+import barberPro6 from '../../assets/barberPro6.png'
 
 
 // hooks
@@ -116,8 +125,21 @@ export default function Projects() {
     const invoiceAppImgs = [invoiceApp1, invoiceApp2, invoiceApp3, invoiceApp4, invoiceApp5, invoiceApp6]
     const pizzeriaProImgs = [pizzeriaPro1, pizzeriaPro2, pizzeriaPro3, pizzeriaPro4, pizzeriaPro5]
     const pizzeriaProMobile = [pizzeriaMobile1, pizzeriaMobile2, pizzeriaMobile3, pizzeriaMobile4, pizzeriaMobile5]
+    const barberProImgs = [barberPro1, barberPro2, barberPro3, barberPro3, barberPro4, barberPro5, barberPro6]
 
     const projectData = [
+        {
+            title: 'Barber Pro',
+            subtitle: 'Complete system for managing your business',
+            role: 'Fullstack Developer',
+            introduction: 'Barber Pro is web app that offers a solution for managing your business. Built with NextJs, TypeScript, and NodeJS, Barber Pro streamlines your business operations and helps you stay organized.',
+            features: 'The app features include an easy schedule management, a revenue tracking, a employee and service registration, and much more. You can even try out the apps functionality with the demo feature or create an account and start using it.',
+            banner: project5,
+            imgs: barberProImgs,
+            mobile: false,
+            gitHubRepo: 'https://github.com/adryanfrey/Barber-Pro-Web',
+            siteLink: 'https://barber-pro-web.vercel.app/'
+        },
         {
             title: 'Audiophile Shop',
             subtitle: 'Bringin you the best audio gear',

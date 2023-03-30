@@ -44,8 +44,8 @@ const AllProjects = ({setProjectsVisible, loading}) => {
             <div onClick={() => handleNavigate('/projects/1')} className='project project1'>
                 <h1>01</h1>
                 <div className='filter'></div>
-                <h2>Audiophile Shop</h2>
-                <p>Bringin you the best audio gear</p>
+                <h2>Barber Pro</h2>
+                <p>Complete system for managing your business</p>
                 <button>
                     <span>See Project</span>
                     <HiArrowCircleRight className='button-icon' />
@@ -55,8 +55,8 @@ const AllProjects = ({setProjectsVisible, loading}) => {
             <div onClick={() => handleNavigate('/projects/2')} className='project project2'>
                 <h1>02</h1>
                 <div className='filter'></div>
-                <h2>Invoice App</h2>
-                <p>Manage your invoices easily</p>
+                <h2>Audiophile Shop</h2>
+                <p>Bringin you the best audio gear</p>
                 <button>
                     <span>See Project</span>
                     <HiArrowCircleRight className='button-icon' />
@@ -66,6 +66,17 @@ const AllProjects = ({setProjectsVisible, loading}) => {
             <div onClick={() => handleNavigate('/projects/3')} className='project project3'>
                 <h1>03</h1>
                 <div className='filter'></div>
+                <h2>Invoice App</h2>
+                <p>Manage your invoices easily</p>
+                <button>
+                    <span>See Project</span>
+                    <HiArrowCircleRight className='button-icon' />
+                </button>
+            </div>
+
+            <div onClick={() => handleNavigate('/projects/4')} className='project project4'>
+                <h1>04</h1>
+                <div className='filter'></div>
                 <h2>Pizzeria Pro</h2>
                 <p>Complete system for managing customer orders in a restaurant.</p>
                 <button >
@@ -74,8 +85,8 @@ const AllProjects = ({setProjectsVisible, loading}) => {
                 </button>
             </div>
 
-            <div onClick={() => handleNavigate('/projects/4')} className='project project4'>
-                <h1>04</h1>
+            <div onClick={() => handleNavigate('/projects/5')} className='project project5'>
+                <h1>05</h1>
                 <div className='filter'></div>
                 <h2>Apple Website Clone</h2>
                 <p>Full animated apple website</p>
