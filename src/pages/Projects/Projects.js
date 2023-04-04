@@ -150,8 +150,8 @@ export default function Projects() {
             banner: project1,
             imgs: audiophileImgs,
             mobile: false,
-            gitHubRepo: 'https://github.com/adryanfrey/Audiophile-E-commerce',
-            siteLink: 'https://adryanfrey.github.io/Audiophile-E-commerce/'
+            gitHubRepo: 'https://github.com/adryanfrey/Audiophile-Ecommerce',
+            siteLink: 'https://audiophile-eccomerce-fawn.vercel.app'
         },
         {
             title: 'Invoice app',
