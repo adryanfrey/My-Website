@@ -15,7 +15,7 @@ import reactNative from '../../assets/reactNative.png'
 import node from '../../assets/nodejs.png'
 import nextjs from '../../assets/nextjs.png'
 
-import cv from '../../assets/adryanfrey-cv.pdf'
+import cv from '../../assets/adryanfreyResume.pdf'
 
 // animations library
 import { gsap } from 'gsap'
@@ -226,7 +226,7 @@ const Home = () => {
             <h1 data-text='Hello, I am Adryan,' className='title'>Hello, I am Adryan,</h1>
             <h1 data-text2='Fullstack Developer' className='subtitle'>Frontend Developer </h1>
             <p>Aspiring software engineer, seeking to apply competent developement skills with focus on collaboration, communication, and passion.</p>
-            <a className='cv' href={cv} download='AdryanFrey_CV.pdf'>Download CV </a>
+            <a className='cv' href={cv} download='AdryanFreyResume.pdf'>Download CV </a>
             <div className='social-media-container'>
               <a href="http://www.linkedin.com/in/adryan-frey"><i className="fa-brands fa-linkedin"></i></a>
               <a href="https://github.com/adryanfrey"><i className="fa-brands fa-github"></i></a>
