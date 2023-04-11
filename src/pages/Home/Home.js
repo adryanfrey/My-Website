@@ -27,7 +27,7 @@ import emailjs from 'emailjs-com'
 import { HiArrowCircleRight } from 'react-icons/hi'
 import { useNavigate } from 'react-router-dom'
 import { IoMdRocket } from 'react-icons/io'
-import {AiOutlineLoading} from 'react-icons/ai'
+import { AiOutlineLoading } from 'react-icons/ai'
 
 // components
 import Footer from '../../components/Footer/Footer'
@@ -57,8 +57,8 @@ const Home = () => {
     }
 
     // first load animation
-    gsap.to('.main-container-text', {x: 1, duration: 1, opacity: 1, ease: "power2.out"})
-    gsap.to('.main-container-img', {x: 1, duration: 1, opacity: 1, ease: "power2.out"})
+    gsap.to('.main-container-text', { x: 1, duration: 1, opacity: 1, ease: "power2.out" })
+    gsap.to('.main-container-img', { x: 1, duration: 1, opacity: 1, ease: "power2.out" })
 
     // skills animation
     gsap.to('.skill-container', {
@@ -99,10 +99,12 @@ const Home = () => {
 
     // contact animation
 
-    gsap.to('.email-container', {opacity: 1, y: 0, duration: 1, ease: "power2.out", scrollTrigger: {
-      trigger: '.email-container',
-      start: 'top 90%',
-    }})
+    gsap.to('.email-container', {
+      opacity: 1, y: 0, duration: 1, ease: "power2.out", scrollTrigger: {
+        trigger: '.email-container',
+        start: 'top 90%',
+      }
+    })
   }, [loading])
 
 
@@ -126,14 +128,14 @@ const Home = () => {
 
   // navigate
   const handleNavigate = (url) => {
-    gsap.to('.project1', {opacity: 0, x: -400, duration: 1})
-    gsap.to('.project2', {opacity: 0, x: 400, duration: 1})
-    gsap.to('.project3', {opacity: 0, x: -400, duration: 1})
-    gsap.to('.project4', {opacity: 0, x: 400, duration: 1})
-    gsap.to('.section2title', {opacity: 0})
+    gsap.to('.project1', { opacity: 0, x: -400, duration: 1 })
+    gsap.to('.project2', { opacity: 0, x: 400, duration: 1 })
+    gsap.to('.project3', { opacity: 0, x: -400, duration: 1 })
+    gsap.to('.project4', { opacity: 0, x: 400, duration: 1 })
+    gsap.to('.section2title', { opacity: 0 })
 
-    gsap.to('.section1', {y: -600, duration: 1})
-    gsap.to('.section3', {y: 600, duration: 1})
+    gsap.to('.section1', { y: -600, duration: 1 })
+    gsap.to('.section3', { y: 600, duration: 1 })
 
     setTimeout(() => {
       navigate(url)
@@ -179,7 +181,7 @@ const Home = () => {
     } catch (error) {
       toast.warn('Sorry there was an error')
     }
-       
+
     setFormLoading(false)
     setBtnClass('')
     e.target.reset()
@@ -383,8 +385,8 @@ const Home = () => {
               Message:
               <textarea name='message' placeholder='Message' required />
             </label>
-            <button className={btnClass} disabled={formLoading}  type='submit'>
-              {formLoading ? (<AiOutlineLoading className='icon' size={20} color='#fff'/>) : ('Send')}
+            <button className={btnClass} disabled={formLoading} type='submit'>
+              {formLoading ? (<AiOutlineLoading className='icon' size={20} color='#fff' />) : ('Send')}
             </button>
           </form>
         </div>
