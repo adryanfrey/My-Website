@@ -76,13 +76,12 @@ export default function Projects() {
 
     // animations
     useEffect(() => {
-
         // first load animation
         gsap.to('.titleContainer', { opacity: 1, x: 0, duration: 1, ease: "power2.out" })
         gsap.to('.imgContainer', { opacity: 1, x: 0, duration: 1, ease: "power2.out" })
         gsap.to('.container2', {opacity: 1, y: 0, duration: 1, delay: .5})
 
-        // scroll animation
+        // scroll animations
         gsap.to('.projectIntroduction', {
             opacity: 1, duration: 2, y: 0, ease: "power2.out", scrollTrigger: {
                 trigger: '.projectIntroduction',
@@ -206,12 +205,12 @@ export default function Projects() {
 
     }
 
-    // handle links
+    // open links in a new tab
     const handleLinks = (link) => {
         window.open(link, '_blank')
     }
 
-    // handle projects modal
+    // open projects modal
     const handleAllProjects = () => {
         gsap.to('.titleContainer', { x: -1000 })
         gsap.to('.imgContainer', { x: 1000 })
@@ -224,7 +223,7 @@ export default function Projects() {
         }, [500])
     }
 
-    // handle contact modal
+    // open contact modal
     const handleContact = () => {
         gsap.to('.titleContainer', { x: -1000 })
         gsap.to('.imgContainer', { x: 1000 })
@@ -237,6 +236,7 @@ export default function Projects() {
         }, [500])
     }
 
+    // navigate to home page
     const handleBackHome = () => {
         gsap.to('.titleContainer', { x: -1000 })
         gsap.to('.imgContainer', { x: 1000 })
@@ -250,7 +250,7 @@ export default function Projects() {
     }
 
 
-    // handle navbar mobile
+    // close navbar mobile
     const handleCloseNavbar = (url = undefined) => {
         const navbar = document.querySelector('.nav-mobile')
         const container = document.querySelector('.projectsContainer')
@@ -273,6 +273,8 @@ export default function Projects() {
         }
     }
 
+
+// opens navbar mobile
     const handleOpenNavbar = () => {
         const navbar = document.querySelector('.nav-mobile')
         const container = document.querySelector('.projectsContainer')
@@ -392,8 +394,6 @@ export default function Projects() {
 
                     </div>
                 }
-
-
             </section>
 
             <Footer />

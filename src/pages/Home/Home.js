@@ -98,7 +98,6 @@ const Home = () => {
     })
 
     // contact animation
-
     gsap.to('.email-container', {
       opacity: 1, y: 0, duration: 1, ease: "power2.out", scrollTrigger: {
         trigger: '.email-container',
@@ -121,12 +120,7 @@ const Home = () => {
     }
   })
 
-  // loader
-  if (loading) {
-    return <Loading setLoading={setLoading} />
-  }
-
-  // navigate
+  // navigate to other page
   const handleNavigate = (url) => {
     gsap.to('.project1', { opacity: 0, x: -400, duration: 1 })
     gsap.to('.project2', { opacity: 0, x: 400, duration: 1 })
@@ -140,9 +134,10 @@ const Home = () => {
     setTimeout(() => {
       navigate(url)
     }, 800)
-
   }
 
+
+// close mobile navbar and scroll to selected section
   const handleCloseNavbar = (scroll = undefined) => {
     const navbar = document.querySelector('.nav-mobile')
     const home = document.querySelector('.home')
@@ -153,12 +148,13 @@ const Home = () => {
 
     if (scroll === '#section1' || scroll === '#section2' || scroll === '#section3') {
       setTimeout(() => {
-
         document.querySelector(scroll).scrollIntoView()
       }, 200)
     }
   }
 
+
+// open mobile navbar
   const handleOpenNavbar = () => {
     const navbar = document.querySelector('.nav-mobile')
     const home = document.querySelector('.home')
@@ -169,6 +165,8 @@ const Home = () => {
 
   }
 
+
+  // sends message 
   const handleMessage = async (e) => {
     e.preventDefault()
 
@@ -185,6 +183,11 @@ const Home = () => {
     setFormLoading(false)
     setBtnClass('')
     e.target.reset()
+  }
+
+  // loader
+  if (loading) {
+    return <Loading setLoading={setLoading} />
   }
 
   return (
