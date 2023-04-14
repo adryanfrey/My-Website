@@ -137,7 +137,7 @@ const Home = () => {
   }
 
 
-// close mobile navbar and scroll to selected section
+  // close mobile navbar and scroll to selected section
   const handleCloseNavbar = (scroll = undefined) => {
     const navbar = document.querySelector('.nav-mobile')
     const home = document.querySelector('.home')
@@ -154,7 +154,7 @@ const Home = () => {
   }
 
 
-// open mobile navbar
+  // open mobile navbar
   const handleOpenNavbar = () => {
     const navbar = document.querySelector('.nav-mobile')
     const home = document.querySelector('.home')
