@@ -1,163 +1,166 @@
-.contact-container
-    display: flex
-    justify-content: center
-    flex-direction: column
-    width: 80%
-    margin: 0 auto
-    margin-bottom: 3rem
-    border-radius: 12px
-    overflow: hidden
-    position: relative
-
-    .closeButton
-        border: none
-        background-color: #25a9d7
-        color: #fff
-        width: 150px
-        height: 60px
-        font-size: 1.1rem
-        font-weight: bold
+.contact
+    height: 100vh
+    
+    .contact-container
         display: flex
         justify-content: center
-        align-items: center
-        cursor: pointer
-        position: fixed
-        top: 0
+        flex-direction: column
+        width: 80%
         margin: 0 auto
-        right: 0
-        left: 0
-        z-index: 10
-        opacity: 0
-
-        span
-            line-height: 60px
-
-        i
-            margin-right: .5rem
-            font-size: 1.4rem
-
-    .contactTitle
-        color: #25a9d7
-        width: 100%
-        font-size: 3rem
-        margin-bottom: 2rem
-        opacity: 0
-        text-align: center
-
-    .email-container
-        width: 100%
-        display: flex
+        margin-bottom: 3rem
+        border-radius: 12px
+        overflow: hidden
         position: relative
-        @media (max-width: 1125px)
-            flex-direction: column
 
-        h1
-            position: absolute
-            color: #39e75f
-            font-size: 3rem
-            width: 100%
-            text-align: center
-            top: 50%
-            left: 50%
-            opacity: 0
-            transform: translate(-50%, -50%)
-            @media (max-width: 1125px)
-                transform: translate(-50%, -150%)
-                font-size: 2.5rem
-
-        .img-bg
-            width: 45%
-            background: url('../../assets/email.png') no-repeat
-            background-size: cover
-            background-position: center
-            display: flex
-            justify-content: flex-end
-            padding: 2rem
-            align-items: flex-start
-            flex-direction: column
-            border-radius: 12px 0 0 12px
-            transform: translate(-200px, 0) 
-            opacity: 0
-            @media (max-width: 1125px)
-                width: 100%
-                padding-top: 15rem
-                border-radius: 0 0 12px 12px
-                order: 2
-
-            i
-                margin-right: 1rem
-
-            h3
-                background-color: #fff
-                width: 100%
-                padding: .5rem 1rem
-                @media (max-width: 460px)
-                    font-size: 1rem
-                @media (max-width: 410px)
-                    font-size: .9rem
-
-            .h3-top
-                border-radius: 12px 12px 0 0
-            .h3-bot
-                border-radius: 0 0 12px 12px
-
-        form
-            width: 55%
-            background-color: #0b1424
+        .closeButton
+            border: none
+            background-color: #25a9d7
+            color: #fff
+            width: 150px
+            height: 60px
+            font-size: 1.1rem
+            font-weight: bold
             display: flex
             justify-content: center
-            padding: 2rem 4rem
-            flex-direction: column
-            border-radius: 0 12px 12px 0
-            transform: translate(200px, 0) 
+            align-items: center
+            cursor: pointer
+            position: fixed
+            top: 0
+            margin: 0 auto
+            right: 0
+            left: 0
+            z-index: 10
             opacity: 0
-            @media (max-width: 1125px)
-                width: 100%
-                order: 1
-                border-radius: 12px 12px 0 0
-            @media (max-width: 680px)
-                padding: 1.7rem
 
-            h2
+            span
+                line-height: 60px
+
+            i
+                margin-right: .5rem
+                font-size: 1.4rem
+
+        .contactTitle
+            color: #25a9d7
+            width: 100%
+            font-size: 3rem
+            margin-bottom: 2rem
+            opacity: 0
+            text-align: center
+
+        .email-container
+            width: 100%
+            display: flex
+            position: relative
+            @media (max-width: 1125px)
+                flex-direction: column
+
+            h1
+                position: absolute
+                color: #39e75f
+                font-size: 3rem
                 width: 100%
                 text-align: center
-                color: #fff
-                font-size: 2rem
-                margin: 1rem 0
+                top: 50%
+                left: 50%
+                opacity: 0
+                transform: translate(-50%, -50%)
+                @media (max-width: 1125px)
+                    transform: translate(-50%, -150%)
+                    font-size: 2.5rem
 
-            label
+            .img-bg
+                width: 45%
+                background: url('../../assets/email.png') no-repeat
+                background-size: cover
+                background-position: center
                 display: flex
+                justify-content: flex-end
+                padding: 2rem
+                align-items: flex-start
                 flex-direction: column
-                color: #fff
-                gap: .5rem
+                border-radius: 12px 0 0 12px
+                transform: translate(-200px, 0) 
+                opacity: 0
+                @media (max-width: 1125px)
+                    width: 100%
+                    padding-top: 15rem
+                    border-radius: 0 0 12px 12px
+                    order: 2
 
-                input
-                    border: none
-                    padding: 1rem
+                i
+                    margin-right: 1rem
+
+                h3
+                    background-color: #fff
+                    width: 100%
+                    padding: .5rem 1rem
+                    @media (max-width: 460px)
+                        font-size: 1rem
+                    @media (max-width: 410px)
+                        font-size: .9rem
+
+                .h3-top
+                    border-radius: 12px 12px 0 0
+                .h3-bot
+                    border-radius: 0 0 12px 12px
+
+            form
+                width: 55%
+                background-color: #0b1424
+                display: flex
+                justify-content: center
+                padding: 2rem 4rem
+                flex-direction: column
+                border-radius: 0 12px 12px 0
+                transform: translate(200px, 0) 
+                opacity: 0
+                @media (max-width: 1125px)
+                    width: 100%
+                    order: 1
+                    border-radius: 12px 12px 0 0
+                @media (max-width: 680px)
+                    padding: 1.7rem
+
+                h2
+                    width: 100%
+                    text-align: center
+                    color: #fff
+                    font-size: 2rem
+                    margin: 1rem 0
+
+                label
+                    display: flex
+                    flex-direction: column
+                    color: #fff
+                    gap: .5rem
+
+                    input
+                        border: none
+                        padding: 1rem
+                        border-radius: 12px
+                        margin-bottom: 1.5rem
+
+                    textarea
+                        border: none
+                        padding: 1rem
+                        border-radius: 12px
+                        margin-bottom: 1.5rem
+                        height: 100px
+                        max-width: 100%
+                        min-width: 100%
+
+                button
+                    height: 50px
                     border-radius: 12px
-                    margin-bottom: 1.5rem
-
-                textarea
+                    background-image: linear-gradient(90deg, #a0e3ec, #25a9d7)
+                    color: #fff
+                    font-weight: bold
+                    cursor: pointer
+                    transition: .4s
+                    position: relative
                     border: none
-                    padding: 1rem
-                    border-radius: 12px
-                    margin-bottom: 1.5rem
-                    height: 100px
-                    max-width: 100%
-                    min-width: 100%
-
-            button
-                height: 50px
-                border-radius: 12px
-                background-image: linear-gradient(90deg, #a0e3ec, #25a9d7)
-                color: #fff
-                font-weight: bold
-                cursor: pointer
-                transition: .4s
-                position: relative
-                border: none
-                margin-top: 2rem
-                margin-bottom: 1rem
-            @media (hover: hover)
-                button:hover
-                    box-shadow: 0px 0px 20px 5px #25a9d7
+                    margin-top: 2rem
+                    margin-bottom: 1rem
+                @media (hover: hover)
+                    button:hover
+                        box-shadow: 0px 0px 20px 5px #25a9d7
