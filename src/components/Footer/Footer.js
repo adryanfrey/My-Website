@@ -10,9 +10,9 @@ export default function Footer() {
         <footer className='footer'>
             <img src={logo} alt="Logo" />
             <ul>
-                <li><a href='#'>Linkedin</a></li>
-                <li><a href='#section1'>Github</a></li>
-                <li><a href='#section2'>Instagram</a></li>
+                <li><a href='https://www.linkedin.com/in/adryan-frey/'>Linkedin</a></li>
+                <li><a href='https://github.com/adryanfrey'>Github</a></li>
+                <li><a href='https://www.instagram.com/adryanfrey/'>Instagram</a></li>
             </ul>
             <p>&copy; 2023 Adryan Frey</p>
         </footer>
