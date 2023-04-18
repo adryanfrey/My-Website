@@ -200,7 +200,7 @@ const Home = () => {
 
         <nav className='navbar-container'>
           <ul>
-            <li><a className='link'><div className='whiteBorder' />Home  <div className='blueBorder' /></a></li>
+            <li><a className='link'><div className='whiteBorder' />Home </a></li>
             <li onClick={() => document.querySelector('.section1').scrollIntoView(false)}><a className='link'><div className='whiteBorder' /> Skills <div className='blueBorder' /></a></li>
             <li onClick={() => document.querySelector('.section2').scrollIntoView(false)}><a className='link'><div className='whiteBorder' /> Projects <div className='blueBorder' /></a></li>
             <li onClick={() => document.querySelector('.section3').scrollIntoView(false)}><a className='link'><div className='whiteBorder' /> Contact <div className='blueBorder' /></a></li>

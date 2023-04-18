@@ -357,3 +357,25 @@
         @media (hover:hover)
             .swiper:hover
                 transform: scale(1.1)
+
+    .allProjectsBottom
+        width: 100%
+        background: #25a9d7
+        display: flex
+        justify-content: center
+        padding: 2rem
+        align-items: center
+        cursor: pointer
+        gap: 1rem
+        transition: filter 0.4s
+
+        &:hover
+            filter: brightness(1.2)
+        p
+            font-size: 2rem
+            color: #fff
+            @media (max-width: 560px)
+                font-size: 1.8rem
+
+        .icon
+            transform: rotate(90deg)

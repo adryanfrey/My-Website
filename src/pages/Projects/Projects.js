@@ -57,6 +57,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation } from "swiper";
 import { useEffect, useState } from 'react'
 import Footer from '../../components/Footer/Footer'
+import { IoMdRocket } from 'react-icons/io'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
@@ -79,18 +80,18 @@ export default function Projects() {
         // first load animation
         gsap.to('.titleContainer', { opacity: 1, x: 0, duration: 1, ease: "power2.out" })
         gsap.to('.imgContainer', { opacity: 1, x: 0, duration: 1, ease: "power2.out" })
-        gsap.to('.container2', {opacity: 1, y: 0, duration: 1, delay: .5})
+        gsap.to('.container2', { opacity: 1, y: 0, duration: 1, delay: .5 })
 
         // scroll animations
         gsap.to('.projectIntroduction', {
-            opacity: 1, duration: 2, y: 0, ease: "power2.out", scrollTrigger: {
+            opacity: 1, duration: 1, y: 0, ease: "power2.out", scrollTrigger: {
                 trigger: '.projectIntroduction',
                 start: 'top 90%',
             }
         })
 
         gsap.to('.visitSiteButton', {
-            opacity: 1, duration: 2, y: 0, ease: "power2.out", scrollTrigger: {
+            opacity: 1, duration: 1, y: 0, ease: "power2.out", scrollTrigger: {
                 trigger: '.visitSiteButton',
                 start: 'top 90%',
             }
@@ -104,7 +105,7 @@ export default function Projects() {
         })
 
         gsap.to('.projectFeatures', {
-            opacity: 1, duration: 2, y: 0, ease: "power2.out", scrollTrigger: {
+            opacity: 1, duration: 1, y: 0, ease: "power2.out", scrollTrigger: {
                 trigger: '.projectFeatures',
                 start: 'top 80%',
             }
@@ -211,12 +212,20 @@ export default function Projects() {
     }
 
     // open projects modal
-    const handleAllProjects = () => {
-        gsap.to('.titleContainer', { x: -1000 })
-        gsap.to('.imgContainer', { x: 1000 })
-        gsap.to('.container2', { y: 200, opacity: 0 })
-        gsap.to('.projects', { height: '100vh' })
-        gsap.to('.navbar', { opacity: 0 })
+    const handleAllProjects = (position) => {
+
+        // checks from where you trying to access all projects
+        if (position === 'top') {
+            gsap.to('.titleContainer', { x: -1000 })
+            gsap.to('.imgContainer', { x: 1000 })
+            gsap.to('.container2', { y: 200, opacity: 0 })
+            gsap.to('.projects', { height: '100vh' })
+            gsap.to('.navbar', { opacity: 0 })
+        } else {
+            gsap.to('.footer', { opacity: 0 })
+            gsap.to('.introductionContainer', { opacity: 0 })
+     
+        }
 
         setTimeout(() => {
             setProjectsVisible(true)
@@ -260,21 +269,21 @@ export default function Projects() {
         container.style.overflow = ''
 
         if (url === '/') {
-                navigate('/')
+            navigate('/')
         }
 
         if (url === '/allProjects') {
-                setProjectsVisible(true)
+            setProjectsVisible(true)
         }
 
         if (url === '/contact') {
-   
-                setContactVisible(true)
+
+            setContactVisible(true)
         }
     }
 
 
-// opens navbar mobile
+    // opens navbar mobile
     const handleOpenNavbar = () => {
         const navbar = document.querySelector('.nav-mobile')
         const container = document.querySelector('.projectsContainer')
@@ -309,7 +318,7 @@ export default function Projects() {
                     <nav className='navbar-container'>
                         <ul>
                             <li onClick={handleBackHome}><a>Back home</a></li>
-                            <li onClick={handleAllProjects}><a>All projects</a></li>
+                            <li onClick={() => handleAllProjects('top')}><a>All projects</a></li>
                             <li onClick={handleContact}><a>Contact</a></li>
                         </ul>
                     </nav>
@@ -394,6 +403,13 @@ export default function Projects() {
 
                     </div>
                 }
+                <div onClick={() => handleAllProjects('bottom')} className="allProjectsBottom">
+                    <p>All Projects</p>
+
+                    <div className='icon'>
+                        <IoMdRocket size={40} color='#fff' />
+                    </div>
+                </div>
             </section>
 
             <Footer />
