@@ -1,14 +1,17 @@
 import './contact.sass'
 import emailjs from 'emailjs-com'
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import { gsap } from 'gsap'
 import { toast } from 'react-toastify'
+import { AiOutlineLoading } from 'react-icons/ai'
 
 const Contact = ({ setContactVisible }) => {
+    const [loading, setLoading] = useState(false)
 
     // handle message
     const handleSubmit = async (e) => {
         e.preventDefault()
+        setLoading(true)
 
         try {
             await emailjs.sendForm('service_yynju27', 'template_hlzd56y', e.target, 'EFiuWxNTSflYwcYLU')
@@ -18,6 +21,7 @@ const Contact = ({ setContactVisible }) => {
 
         } catch (error) {
             toast.warn('Sorry there was an error')
+            setLoading(false)
         }
 
         e.target.reset()
@@ -67,7 +71,7 @@ const Contact = ({ setContactVisible }) => {
                             Message:
                             <textarea name='message' placeholder='Message' required />
                         </label>
-                        <button type='submit'>Send</button>
+                        <button type='submit' className={loading ? 'disabled' : ''} disabled={loading}>{loading ? <AiOutlineLoading size={30} className='icon'/> : "Send"}</button>
                     </form>
                 </div>
             </div>

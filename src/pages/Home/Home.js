@@ -178,6 +178,7 @@ const Home = () => {
       toast.success('Thanks for your message, I will return ASAP :)')
     } catch (error) {
       toast.warn('Sorry there was an error')
+      console.log(error)
     }
 
     setFormLoading(false)
