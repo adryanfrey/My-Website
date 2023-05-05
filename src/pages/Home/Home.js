@@ -219,9 +219,9 @@ const Home = () => {
             <li onClick={() => handleCloseNavbar('#section3')}>Contact</li>
           </ul>
           <div className='socialMediaNav'>
-            <a href="http://www.linkedin.com/in/adryan-frey"><i className="fa-brands fa-linkedin"></i></a>
-            <a href="https://github.com/adryanfrey"><i className="fa-brands fa-github"></i></a>
-            <a href="https://www.instagram.com/adryanfrey"><i className="fa-brands fa-instagram"></i></a>
+            <a href="http://www.linkedin.com/in/adryan-frey" target='_blank'><i className="fa-brands fa-linkedin"></i></a>
+            <a href="https://github.com/adryanfrey" target='_blank'><i className="fa-brands fa-github"></i></a>
+            <a href="https://www.instagram.com/adryanfrey" target='_blank'><i className="fa-brands fa-instagram"></i></a>
           </div>
         </div>
       </header>
@@ -234,9 +234,9 @@ const Home = () => {
             <p>Aspiring software engineer, seeking to apply competent developement skills with focus on collaboration, communication, and passion.</p>
             <a className='cv' href={cv} download='AdryanFreyResume.pdf'>Download CV </a>
             <div className='social-media-container'>
-              <a href="http://www.linkedin.com/in/adryan-frey"><i className="fa-brands fa-linkedin"></i></a>
-              <a href="https://github.com/adryanfrey"><i className="fa-brands fa-github"></i></a>
-              <a href="https://www.instagram.com/adryanfrey"><i className="fa-brands fa-instagram"></i></a>
+              <a href="http://www.linkedin.com/in/adryan-frey" target='_blank'><i className="fa-brands fa-linkedin"></i></a>
+              <a href="https://github.com/adryanfrey" target='_blank'><i className="fa-brands fa-github"></i></a>
+              <a href="https://www.instagram.com/adryanfrey"target='_blank'><i className="fa-brands fa-instagram"></i></a>
             </div>
           </div>
           <div className='main-container-img'>
